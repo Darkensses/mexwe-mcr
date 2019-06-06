@@ -2,11 +2,13 @@
   "name": "sofifa-psx-react",
   "version": "0.1.0",
   "dependencies": {
-    "evergreen-ui": "^4.15.0",
+    "antd": "^3.19.0",
     "node-fetch": "^2.3.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.86.0",
     "xmldom": "^0.1.27",
     "xpath": "0.0.27"
   },
