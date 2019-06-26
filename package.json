@@ -24,7 +24,6 @@
   "bugs": {
     "url": "https://github.com/Darkensses/sofifa-psx-react/issues"
   },
-  "homepage": "https://github.com/Darkensses/sofifa-psx-react",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
