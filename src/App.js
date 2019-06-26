@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
 import * as api from './api/api';
+import * as mcr from './api/mcr';
 //import { Button } from 'evergreen-ui'
 import { Dropdown } from 'semantic-ui-react'
 import Table from 'antd/lib/table'; // for js
 import 'antd/lib/table/style/css';
+//import LoadingOverlay from 'react-loading-overlay';
+//import MatrixWaveLoader from './components/MatrixWaveLoader';
+import './App.css';
+import Overlay from './components/Overlay';
+import MatrixWaveLoader from './components/MatrixWaveLoader';
+import DivPlayer from './components/DivPlayer';
 
 const columns = [{
   title: 'Name',
@@ -43,8 +49,10 @@ const data = [{
 class App extends Component {
   
   state = {
+    isLoading: false,
     leagues: [],
     teams: [],
+    players: [],
     selectedRowKeys: [],
   }
 
@@ -63,20 +71,26 @@ class App extends Component {
   }
 
   getLeagues = async () => {    
+    this.setState({isLoading: true});
     const leagues = await api.getLeagues();
-    this.setState({leagues: leagues});
+    this.setState({leagues: leagues, isLoading: false});
     console.log(this.state);
   }
 
   getTeams = async (index) => {    
+    this.setState({isLoading: true});
     //const teams = await api.getTeams(this.state.leagues[index].id);
     const teams = await api.getTeams(index);
-    this.setState({teams: teams});
+    this.setState({teams: teams, isLoading: false});
     console.log(this.state);
   }
 
   getPlayers = async (index) => {
-    await api.getPlayers(index);
+    this.setState({isLoading: true});
+    const players = await api.getPlayers(index);
+    let playersWE2002 = mcr.toWE2002(players);
+    this.setState({players: players, isLoading: false});
+    console.log(playersWE2002)
   }
 
   getArrayValues = (arr) => {
@@ -95,6 +109,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.isLoading)
     const auxLeagues = this.getArrayValues(this.state.leagues);
     const auxTeams = this.getArrayValues(this.state.teams);
     const { selectedRowKeys } = this.state;
@@ -104,7 +119,8 @@ class App extends Component {
     };
     
     return (
-      <div>
+      <div>        
+        <Overlay active={this.state.isLoading} text='Loading...' loader={<MatrixWaveLoader/>}/>
         <h1>Hi</h1>
         <button onClick={this.getLeagues}>Connect</button>
         <Dropdown
@@ -134,6 +150,10 @@ class App extends Component {
             },
           })}
         />
+
+        {this.state.players.map((player, index) => 
+          <DivPlayer key={index} name={player.name} number={player.shirtNumber} position={player.position}/>
+        )}        
         
       </div>
     );

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+
+.divPlayer__wrapper {
+    width: 200px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    overflow:hidden;    
+    box-shadow: 2px 4px 4px rgba(0,0,0,.15);
+}
+
+.divPlayer__wrapper div {
+    text-align: center;   
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */ 
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 2px;    
+}
+
+.divPlayer__name {
+    width: 60%;
+    height: 100%;
+    background: #24c6dc; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24c6dc, #514a9d); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24c6dc, #514a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.divPlayer__number {
+    width: 20%;
+    background: #514a9d;
+    font-style: italic;        
+}
+
+.divPlayer__position {
+    width: 20%;
+    background: #827717;
+    font-style: italic;
+}

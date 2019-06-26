@@ -6,9 +6,12 @@
     "node-fetch": "^2.3.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-loading-overlay": "^1.0.1",
     "react-scripts": "2.1.8",
+    "react-transition-group": "^4.1.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.86.0",
+    "styled-components": "^4.3.1",
     "xmldom": "^0.1.27",
     "xpath": "0.0.27"
   },
