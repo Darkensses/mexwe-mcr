@@ -1,0 +1,4 @@
+[build]
+base = "sofifa-psx-react/"
+publish = "sofifa-psx-react/build/"
+command = "npm run build"
