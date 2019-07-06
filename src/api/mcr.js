@@ -1,27 +1,35 @@
+const credits = require('./credits.json')
+
 export function toWE2002(arrPlayers) {
     let dict = [];
     for(var i = 0; i < arrPlayers.length; i++) {
         dict.push({
+            name: arrPlayers[i].name.replace(/\s+/g, '').slice(0, 10),
             foot: getFoot(arrPlayers[i].weakFoot, arrPlayers[i].preferredFoot),
             position: getPosition(arrPlayers[i].position),
             height: arrPlayers[i].height,
-            body: getBody(arrPlayers[i].weight, arrPlayers[i].height),
-            // TODO: shirtnumber and team
+            body: getBody(arrPlayers[i].weight, arrPlayers[i].height),            
+            shirtNumber: arrPlayers[i].shirtNumber,
+            // TODO: team
             offense: getOffense(arrPlayers[i].positioning),
             defense: arrPlayers[i].position === 'GK' ? getDefenseGK(arrPlayers[i].gkDiving, arrPlayers[i].gkKicking) : getDefensePL(arrPlayers[i].marking, arrPlayers[i].slidingTackle),
             bodyBalance: getBodyBalance(arrPlayers[i].balance),
             stamina: getStamina(arrPlayers[i].stamina),
-            speed: -1,
+            speed: getSpeed(arrPlayers[i].sprintSpeed),
             acceleration: getAcceleration(arrPlayers[i].acceleration),
             passAccuracy: getPassAccuracy(arrPlayers[i].shortPassing, arrPlayers[i].longPassing),
-            shotPower: -1,
-            shotAccuracy: -1,
+            shotPower: getShotPower(arrPlayers[i].shotPower),
+            shotAccuracy: getShotAccuracy(arrPlayers[i].finishing),
             jumpPower: getJumpPower(arrPlayers[i].jumping),
             headAccuracy: getHeadAccuracy(arrPlayers[i].headingAccuracy),
             technique: getTechnique(arrPlayers[i].ballControl),
             dirbble: getDribble(arrPlayers[i].dribbling),
-            curve: getCurve(arrPlayers[i].curve)
+            curve: getCurve(arrPlayers[i].curve),
+            agression: getAgression(arrPlayers[i].position, arrPlayers[i].positioning),
+            response: arrPlayers[i] === 'GK' ? getResponseGK(arrPlayers[i].gkReflexes) : getResponsePL(arrPlayers[i].reactions),
+            outside: getOutside(arrPlayers[i].crossing),
         });
+        dict[i]['credits'] = getCredits(dict[i]); // TODO: DEFENSE 
     }
     return dict;    
 }
@@ -147,6 +155,9 @@ function getStamina(stamina) {
 }
 
 // speed -> sprintSpeed -> P27:Q126
+function getSpeed(sprintSpeed) {
+    return speedAndShot(sprintSpeed);
+}
 
 // acceleration -> acceleration -> M27:N126
 function getAcceleration(acceleration) {
@@ -160,8 +171,14 @@ function getPassAccuracy(shortPassing, longPassing) {
 }
 
 // shotPower -> shotPower -> P27:Q126
+function getShotPower(shotPower) {
+    return speedAndShot(shotPower);
+}
 
 // shotAccuracy -> finishing -> P27:Q126
+function getShotAccuracy(finishing) {
+    return speedAndShot(finishing);
+}
 
 // jumpPower -> jumping M27:N126
 function getJumpPower(jumping) {
@@ -188,7 +205,59 @@ function getCurve(curve) {
     return normalStats(curve);
 }
 
+// TODO: Refactoring the ifs
+// aggression -> String( position + positioning ) -> AO27:AP826
+function getAgression(position, positioning) {    
+    if(positioning >= 1 && positioning <= 10) { return 12; }
+    else if(positioning >= 11 && positioning <= 20) { return 13; }
+    else if(positioning >= 21 && positioning <= 30) { return 14; }
+    else if(positioning >= 31 && positioning <= 50) { return 15; }
+    else if(((position === 'GK' || position === 'CB' || position === 'DH') && (positioning >= 51 && positioning <= 80)) || (positioning>= 51 && positioning <= 70)) {
+        return 16;
+    }
+    else if(((position === 'GK' || position === 'CB' || position === 'DH') && (positioning >= 81 && positioning <= 83)) || (positioning>= 71 && positioning <= 78)) {
+        return 17;
+    }
+    else if(((position === 'GK' || position === 'CB' || position === 'DH') && (positioning >= 84 && positioning <= 86)) || (positioning>= 79 && positioning <= 86)) {
+        return 18;
+    }
+    else if(positioning >= 87) { return 19; }
+    else { throw 'The value must be a number and greater or equal than 1'}
+}
 
+// responsePL -> reactions ->  M27:N126
+function getResponsePL(reactions) {
+    return normalStats(reactions);
+}
+
+// responseGK -> gkReflexes -> V27:W126
+function getResponseGK(gkReflexes) {
+    if(gkReflexes >= 1 && gkReflexes <= 5) { return 12; }
+    else if(gkReflexes >= 6 && gkReflexes <= 10) { return 13; }
+    else if(gkReflexes >= 11 && gkReflexes <= 25) { return 14; }
+    else if(gkReflexes >= 26 && gkReflexes <= 45) { return 15; }
+    else if(gkReflexes >= 46 && gkReflexes <= 70) { return 16; }
+    else if(gkReflexes >= 71 && gkReflexes <= 75) { return 17; }
+    else if(gkReflexes >= 70 && gkReflexes <= 80) { return 18; }
+    else if(gkReflexes >= 81) { return 19; }
+    else { throw 'The value must be a number and greater or equal than 1'}
+}
+
+// outside -> crossing -> AB27:AC126
+function getOutside(crossing) {
+    if(crossing >= 1 && crossing <= 70) { return 'NO'}
+    else if(crossing >= 71) { return 'YES'}
+    else { throw 'The value must be a number and greater or equal than 1'}
+}
+
+// credits -> statsFix -> Formulas!A2:B146
+function getCredits(player) {
+    let sfix = statsFix(player);
+    return credits[`${sfix}`];
+}
+
+
+// M27:N126
 function normalStats(value) {
     if(value >= 1 && value <= 10) { return 12; }
     else if(value >= 11 && value <= 20) { return 13; }
@@ -201,3 +270,85 @@ function normalStats(value) {
     else { throw 'The value must be a number and greater or equal than 1'}
 }
 
+// P27:Q126
+function speedAndShot(value) {
+    if(value >= 1 && value <= 10) { return 12; }
+    else if(value >= 11 && value <= 20) { return 13; }
+    else if(value >= 21 && value <= 30) { return 14; }
+    else if(value >= 31 && value <= 50) { return 15; }
+    else if(value >= 51 && value <= 75) { return 16; }
+    else if(value >= 76 && value <= 80) { return 17; }
+    else if(value >= 81 && value <= 90) { return 18; }
+    else if(value >= 91) { return 19; } // MexWE Fix
+    else { throw 'The value must be a number and greater or equal than 1'}
+}
+
+// =========== B O N U S  S T A T S ===========
+
+// bonusFoot: foot -> Formulas!E2:F4
+function bonusFoot(foot) {
+    return foot === 'B' ? 4 : 0;
+}
+
+// bonusOutside: outside -> Formulas!E7:F8
+function bonusOutside(outside) {
+    return outside === 'YES' ? 4 : 0;
+}
+
+// bonusGkDef -> String.join(position, defense)
+// bonusGkDefense: bonusGkDef -> Formulas!E11:F18
+function bonusGkDefense(position, defense){
+    if(position === 'GK') {
+        if(defense === 19) { return 12;}
+        else if(defense === 18) { return 8;}
+        else if(defense === 17) { return 4;}
+        else if(defense <= 16) { return 0;}
+    }
+    else { return 0; }
+}
+
+// bonusGkRes -> String.join(position, responsePL | responseGK)
+// bonusGkResponse: bonusGkRes -> Formulas!E21:F28
+function bonusGkResponse(position, defense){
+    if(position === 'GK') {
+        if(defense === 19) { return 12;}
+        else if(defense === 18) { return 8;}
+        else if(defense === 17) { return 4;}
+        else if(defense <= 16) { return 0;}
+    }
+    else { return 0; }
+}
+
+// stats: offense + ... + response -> SUMA(I696:X696)
+function stats(player) {
+    let sum =
+      player.offense +
+      player.defense +
+      player.bodyBalance +
+      player.stamina +
+      player.stamina +
+      player.speed +
+      player.acceleration +
+      player.passAccuracy +
+      player.shotPower +
+      player.shotAccuracy +
+      player.jumpPower +
+      player.headAccuracy +
+      player.technique +
+      player.dirbble +
+      player.curve +
+      player.agression +
+      player.response;
+    return sum;
+}
+
+// statsFix: bonusFoot + bonusOutside + bonusGkDefense + bonusGkResponse + stats
+function statsFix(player) {
+    let fix =
+      bonusFoot(player.foot) +
+      bonusOutside(player.outside) +
+      bonusGkDefense(player.position, player.defense) +
+      bonusGkResponse(player.position, player.defense) +
+      stats(player);
+    return fix;
+}
