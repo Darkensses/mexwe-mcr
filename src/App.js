@@ -11,6 +11,7 @@ import './App.css';
 import Overlay from './components/Overlay';
 import MatrixWaveLoader from './components/MatrixWaveLoader';
 import DivPlayer from './components/DivPlayer';
+import * as ObjectsToCsv from 'objects-to-csv';
 
 const columns = [{
   title: 'Name',
@@ -91,7 +92,21 @@ class App extends Component {
     let playersWE2002 = mcr.toWE2002(players);
     this.setState({players: players, isLoading: false});
     console.log(playersWE2002)
+    
+    let csv = new ObjectsToCsv(playersWE2002);
+  
+    // Return the CSV file as string:
+    let csvStr = await csv.toString();
+    //console.log(csvStr);
+    var universalBOM = "\uFEFF";
+    const element = document.createElement("a");
+    const file = new Blob(['data:text/csv;charset=utf-8,' + csvStr], {type: 'text/csv'});
+    element.href = encodeURI('data:text/csv;charset=utf-8,' + universalBOM + csvStr);//URL.createObjectURL(file);
+    element.download = "mcr.csv";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
   }
+
 
   getArrayValues = (arr) => {
     var auxArr = [];
@@ -138,18 +153,7 @@ class App extends Component {
           selection
           options={auxTeams}
           onChange={(e, selected) => this.getPlayers(selected.value)}
-        />
-
-        <Table
-          rowSelection={rowSelection}
-          columns={columns}
-          dataSource={data}
-          onRow={(record) => ({
-            onClick: () => {
-              console.log(record);              
-            },
-          })}
-        />
+        />        
 
         {this.state.players.map((player, index) => 
           <DivPlayer key={index} name={player.name} number={player.shirtNumber} position={player.position}/>
