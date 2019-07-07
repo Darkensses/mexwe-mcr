@@ -5,6 +5,7 @@ export function toWE2002(arrPlayers) {
     for(var i = 0; i < arrPlayers.length; i++) {
         dict.push({
             name: arrPlayers[i].name.replace(/\s+/g, '').slice(0, 10),
+            age: arrPlayers[i].age,
             foot: getFoot(arrPlayers[i].weakFoot, arrPlayers[i].preferredFoot),
             position: getPosition(arrPlayers[i].position),
             height: arrPlayers[i].height,
