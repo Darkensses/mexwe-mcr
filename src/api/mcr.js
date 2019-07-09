@@ -62,7 +62,7 @@ function getPosition(position) {
     else if(position === 'LM' || position === 'RM') { return 'SH'; }
     else if(position === 'CAM') { return 'OH'; }
     else if(position === 'LW' || position === 'RW') { return 'WG'; }
-    else if(position === 'ST') { return 'CF'; }
+    else if(position === 'ST' || position === 'CF') { return 'CF'; }
     else { throw 'Position conversion was not valid'; }
 }
 

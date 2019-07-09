@@ -99,8 +99,7 @@ class App extends Component {
     let csvStr = await csv.toString();
     //console.log(csvStr);
     var universalBOM = "\uFEFF";
-    const element = document.createElement("a");
-    const file = new Blob(['data:text/csv;charset=utf-8,' + csvStr], {type: 'text/csv'});
+    const element = document.createElement("a");    
     element.href = encodeURI('data:text/csv;charset=utf-8,' + universalBOM + csvStr);//URL.createObjectURL(file);
     element.download = "mcr.csv";
     document.body.appendChild(element); // Required for this to work in FireFox
