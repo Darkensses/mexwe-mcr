@@ -1,10 +1,13 @@
+const BinaryFile = require('binary-file');
+var fs = require('fs');
+var accents = require('remove-accents');
 const credits = require('./credits.json')
 
 export function toWE2002(arrPlayers) {
     let dict = [];
     for(var i = 0; i < arrPlayers.length; i++) {
         dict.push({
-            name: arrPlayers[i].name.replace(/\s+/g, '').slice(0, 10),
+            name: accents.remove(arrPlayers[i].name.replace(/\s+/g, '').slice(0, 10)),
             age: arrPlayers[i].age,
             foot: getFoot(arrPlayers[i].weakFoot, arrPlayers[i].preferredFoot),
             position: getPosition(arrPlayers[i].position),
@@ -352,4 +355,11 @@ function statsFix(player) {
       bonusGkResponse(player.position, player.defense) +
       stats(player);
     return fix;
+}
+
+export async function writeMCR() {
+    let myBinaryFile = new BinaryFile('./MCRBASE.mcr','r');
+    console.log(myBinaryFile);
+    var stat = fs.statSync('./MCRBASE.mcr');
+    console.log(stat)
 }

@@ -21,11 +21,25 @@ export default class Overlay extends React.Component {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 2;
+      display: flex;
       width: 100%;
       height: 100%;
+      visibility: ${isActive ? 'visible' : 'hidden'};
+      overflow: hidden !important;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    `;
+
+    const OverlayWrapper = styled.div`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200vw;
+      height: 200vh;
       background: rgba(0, 0, 0, 0.7);
-      overflow-y: hidden !important;
+      transition: opacity 500ms ease-in;
+      opacity: ${isActive ? '1' : '0'};      
     `;
 
     const Loader = styled.div`
@@ -45,20 +59,22 @@ export default class Overlay extends React.Component {
 
     //if (isActive) {setInProp = isActive;}
     return (
-      <CSSTransition
-        in={isActive}
-        timeout={900}
-        classNames="dialog"
-        unmountOnExit
-      >
-        <Wrapper id="overlay__wrapper">
-          <Loader>
-            {loaderElement}
-            {textElement}
-          </Loader>
-          
-        </Wrapper>
-      </CSSTransition>
+      <Wrapper>
+        <CSSTransition
+          in={isActive}
+          timeout={900}
+          classNames="dialog"
+          unmountOnExit
+        >
+          <OverlayWrapper id="overlay__wrapper">
+            <Loader>
+              {loaderElement}
+              {textElement}
+            </Loader>
+            
+          </OverlayWrapper>
+        </CSSTransition>
+      </Wrapper>
     );
   }
 }

@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan|K2D|Teko&display=swap');
+*, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'K2D', sans-serif;
+}
 
 body {
   margin: 0;

@@ -1,8 +1,24 @@
-*, html {
-  margin: 0;
-  padding: 0;
+button {
+  color: #ffffff;
+  border: 0;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 2.5em;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 200;
+  background: #52A0FD;
+  /*background: linear-gradient(to right, #52A0FD 0%, #00e2fa 80%, #00e2fa 100%);*/
+  box-shadow: 0 0.15em 1em rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+button:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
