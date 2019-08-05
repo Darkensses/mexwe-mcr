@@ -27,7 +27,7 @@ export function toWE2002(arrPlayers) {
             jumpPower: getJumpPower(arrPlayers[i].jumping),
             headAccuracy: getHeadAccuracy(arrPlayers[i].headingAccuracy),
             technique: getTechnique(arrPlayers[i].ballControl),
-            dirbble: getDribble(arrPlayers[i].dribbling),
+            dribble: getDribble(arrPlayers[i].dribbling),
             curve: getCurve(arrPlayers[i].curve),
             agression: getAgression(arrPlayers[i].position, arrPlayers[i].positioning),
             response: arrPlayers[i] === 'GK' ? getResponseGK(arrPlayers[i].gkReflexes) : getResponsePL(arrPlayers[i].reactions),

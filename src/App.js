@@ -98,7 +98,8 @@ class App extends Component {
 
     console.log(jsonPlayers);
 
-    await fetch("http://localhost:9000/mcr", {
+    // http://localhost:9000/mcr
+    await fetch("https://snappy-storm-153720.appspot.com/mcr", {
       method: "POST",
       headers: {
         Accept: "application/json",
