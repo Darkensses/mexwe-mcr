@@ -1,5 +1,3 @@
-const BinaryFile = require('binary-file');
-var fs = require('fs');
 var accents = require('remove-accents');
 const credits = require('./credits.json')
 
@@ -16,7 +14,7 @@ export function toWE2002(arrPlayers) {
             shirtNumber: arrPlayers[i].shirtNumber,
             // TODO: team
             offense: getOffense(arrPlayers[i].positioning),
-            defense: arrPlayers[i].position === 'GK' ? getDefenseGK(arrPlayers[i].gkDiving, arrPlayers[i].gkKicking) : getDefensePL(arrPlayers[i].marking, arrPlayers[i].slidingTackle),
+            defense: arrPlayers[i].position === 'GK' ? getDefenseGK(arrPlayers[i].gkDiving, arrPlayers[i].gkKicking) : getDefensePL(arrPlayers[i].defensiveAwareness, arrPlayers[i].slidingTackle),
             bodyBalance: getBodyBalance(arrPlayers[i].balance),
             stamina: getStamina(arrPlayers[i].stamina),
             speed: getSpeed(arrPlayers[i].sprintSpeed),
@@ -60,13 +58,13 @@ function getFoot(weakFoot, preferredFoot) {
 function getPosition(position) {
     if(position === 'GK') { return 'GK'; }
     else if(position === 'CB' || position === 'RCB' || position === 'LCB') { return 'CB'; }
-    else if(position === 'LB' || position === 'RB') { return 'SB'; }
+    else if(position === 'LB' || position === 'RB' || position === 'LWB' || position === 'RWB') { return 'SB'; }
     else if(position === 'CM' || position === 'RCM' || position === 'LCM' || position === 'CDM') { return 'DH'; }
     else if(position === 'LM' || position === 'RM') { return 'SH'; }
     else if(position === 'CAM') { return 'OH'; }
     else if(position === 'LW' || position === 'RW') { return 'WG'; }
     else if(position === 'ST' || position === 'CF') { return 'CF'; }
-    else { throw 'Position conversion was not valid'; }
+    else { throw `getPosition: Position conversion was not valid: ${position}`; }
 }
 
 // body -> Math.floor( weight * (height -> J27:K97) ) -> G27:H87
@@ -88,7 +86,7 @@ function getBody(weight, height) {
     else if(bodyHeight >= 85 && bodyHeight <= 90) { return 'F'; }
     else if(bodyHeight >= 90 && bodyHeight <= 94) { return 'G'; }
     else if(bodyHeight >= 95) { return 'H'}
-    else { throw 'the body height must be a number and greather or equal than 50.'}
+    else { throw 'getBody: the body height must be a number and greather or equal than 50.'}
 }
 
 /**
@@ -107,7 +105,7 @@ function getHeightCoefficentForBody(height) {
     else if(height >= 191 && height <= 195) { return 0.89; }
     else if(height >= 196 && height <= 200) { return 0.87; }
     else if(height >= 201) { return 0.85; }
-    else { throw 'Height must be a number and greater or equal than 150'}
+    else { throw "getHeightCoefficentForBody: Height must be a number and greater or equal than 150";}
 }
 
 // offense -> positioning -> S27:T126
@@ -125,7 +123,7 @@ function getOffense(positioning) {
     else if(positioning >= 81 && positioning <= 83) { return 17; }
     else if(positioning >= 84 && positioning <= 86) { return 18; }
     else if(positioning >= 87) { return 19; }
-    else { throw 'Positioning must be a number and greater or equal than 1'}
+    else { throw "getOffense: Positioning must be a number and greater or equal than 1";}
 }
 
 // defensePL -> Math.floor( (marking + slidingTackle) / 2 ) -> M27:N126
@@ -145,7 +143,7 @@ function getDefenseGK(gkDiving, gkKicking) {
     else if(defense >= 71 && defense <= 75) { return 17; }
     else if(defense >= 76 && defense <= 80) { return 18; }
     else if(defense >= 81) { return 19; }
-    else { throw 'GK Defense must be a number and greater or equal than 1'}
+    else { throw "getDefenseGK: GK Defense must be a number and greater or equal than 1";}
 }
 
 // bodyBalance -> balance -> M27:N126
@@ -226,7 +224,7 @@ function getAgression(position, positioning) {
         return 18;
     }
     else if(positioning >= 87) { return 19; }
-    else { throw 'The value must be a number and greater or equal than 1'}
+    else { throw "getAgression: The value must be a number and greater or equal than 1";}
 }
 
 // responsePL -> reactions ->  M27:N126
@@ -244,14 +242,14 @@ function getResponseGK(gkReflexes) {
     else if(gkReflexes >= 71 && gkReflexes <= 75) { return 17; }
     else if(gkReflexes >= 70 && gkReflexes <= 80) { return 18; }
     else if(gkReflexes >= 81) { return 19; }
-    else { throw 'The value must be a number and greater or equal than 1'}
+    else { throw "getResponseGK: The value must be a number and greater or equal than 1";}
 }
 
 // outside -> crossing -> AB27:AC126
 function getOutside(crossing) {
     if(crossing >= 1 && crossing <= 70) { return 'NO'}
     else if(crossing >= 71) { return 'YES'}
-    else { throw 'The value must be a number and greater or equal than 1'}
+    else { throw "getOutside: The value must be a number and greater or equal than 1";}
 }
 
 // credits -> statsFix -> Formulas!A2:B146
@@ -271,7 +269,7 @@ function normalStats(value) {
     else if(value >= 76 && value <= 80) { return 17; }
     else if(value >= 81 && value <= 85) { return 18; }
     else if(value >= 86) { return 19; }
-    else { throw 'The value must be a number and greater or equal than 1'}
+    else { throw "normalStats: The value must be a number and greater or equal than 1";}
 }
 
 // P27:Q126
@@ -284,7 +282,7 @@ function speedAndShot(value) {
     else if(value >= 76 && value <= 80) { return 17; }
     else if(value >= 81 && value <= 90) { return 18; }
     else if(value >= 91) { return 19; } // MexWE Fix
-    else { throw 'The value must be a number and greater or equal than 1'}
+    else { throw "speedAndShot: The value must be a number and greater or equal than 1";}
 }
 
 // =========== B O N U S  S T A T S ===========
@@ -339,7 +337,7 @@ function stats(player) {
       player.jumpPower +
       player.headAccuracy +
       player.technique +
-      player.dirbble +
+      player.dribble +
       player.curve +
       player.agression +
       player.response;
@@ -355,11 +353,4 @@ function statsFix(player) {
       bonusGkResponse(player.position, player.defense) +
       stats(player);
     return fix;
-}
-
-export async function writeMCR() {
-    let myBinaryFile = new BinaryFile('./MCRBASE.mcr','r');
-    console.log(myBinaryFile);
-    var stat = fs.statSync('./MCRBASE.mcr');
-    console.log(stat)
 }

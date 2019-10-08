@@ -3,7 +3,6 @@ import * as api from "./api/api";
 import * as mcr from "./api/mcr";
 import DD from "./components/DD";
 //import LoadingOverlay from 'react-loading-overlay';
-//import 'semantic-ui-css/semantic.min.css';
 import "./App.css";
 import Overlay from "./components/Overlay";
 import MatrixWaveLoader from "./components/MatrixWaveLoader";
@@ -229,70 +228,74 @@ class App extends Component {
     return (
       <div>
         <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnVisibilityChange
-        draggable
-        pauseOnHover
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover
         />
-     
+
         <Overlay
           active={this.state.isLoading}
           text="Loading..."
           loader={<MatrixWaveLoader />}
         />
-        
-        <h1>MexWE</h1>
-        <button onClick={this.getLeagues}>Connect</button>
-        <DD
-            title="Select League"
-            list={this.state.auxLeagues}
-            resetThenSet={this.resetThenSet}   
-            onChange={selected => this.getTeams(selected.id)}         
-        />
-        <DD
-            title="Select Team"
-            list={this.state.auxTeams}
-            resetThenSet={this.resetThenSet}   
-            onChange={selected => this.getPlayers(selected.id)}         
-        />
-        
-        <button onClick={this.selectAll}>Select default</button>
-        {/*
-          auxplayer.map((player, index) => (
-            <DivPlayer
-              key={index}
-              name={player.name}
-              number={player.shirtNumber}
-              position={player.position}
-              item={index}
-              handleCheckboxClick={this.handleCheckboxClick}
-              checkedListAll={this.state.checkedListAll}              
-              ItemsChecked={this.state.ItemsChecked}
-            />
-          ))*/
-        }
-        
+        <div className="app__header">
+          <h1>MexWE</h1>
+          <hr className="colored" />
+          <span>
+            Scraping tool ⛏🔧 to get the stats from SOFIFA 🌐 and then convert
+            them to a MCR PSX 🎮
+          </span>
+        </div>
 
-        {this.state.players.map((player, index) => (
-          <DivPlayer
-            key={index}
-            name={player.name}
-            number={player.shirtNumber}
-            position={player.position}
-            item={index}
-            handleCheckboxClick={this.handleCheckboxClick}
-            checkedListAll={this.state.checkedListAll}              
-            ItemsChecked={this.state.ItemsChecked}
-          />
-        ))}
-        <button onClick={this.downloadMCR}>Download MCR</button>
-        <button onClick={this.downloadCSV}>Download CSV</button>
-        {<pre>Selected List: {JSON.stringify(this.state.checkedListAll, null, 2)}</pre>}
+        <div className="app__content">
+          <div className="app__content__player">
+            <button onClick={this.getLeagues}>Connect</button>
+            <DD
+              title="Select League"
+              list={this.state.auxLeagues}
+              resetThenSet={this.resetThenSet}
+              onChange={selected => this.getTeams(selected.id)}
+            />
+            <DD
+              title="Select Team"
+              list={this.state.auxTeams}
+              resetThenSet={this.resetThenSet}
+              onChange={selected => this.getPlayers(selected.id)}
+            />
+
+            <div className="players__button">
+              <button onClick={this.selectAll}>Select default</button>
+              <button onClick={this.downloadMCR}>Download MCR</button>
+              <button onClick={this.downloadCSV}>Download CSV</button>
+            </div>
+
+            {this.state.players.map((player, index) => (
+              <DivPlayer
+                key={index}
+                name={player.name}
+                number={player.shirtNumber}
+                position={player.position}
+                item={index}
+                handleCheckboxClick={this.handleCheckboxClick}
+                checkedListAll={this.state.checkedListAll}
+                ItemsChecked={this.state.ItemsChecked}
+              />
+            ))}
+
+            {
+              <pre>
+                Selected List:{" "}
+                {JSON.stringify(this.state.checkedListAll, null, 2)}
+              </pre>
+            }
+          </div>
+        </div>
       </div>
     );
   }

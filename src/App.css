@@ -1,3 +1,51 @@
+.app__header {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.app__header hr.colored {
+  border: 0;   /* in order to override TWBS stylesheet */
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #009688 0%, #009688 33%, #BDBDBD 33%, #BDBDBD 66%, #f44336 66%, #f44336 100%); /* W3C */
+}
+
+.app__header span {
+  font-size: 14px;
+}
+
+.app__content {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__content__player {  
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.app__content__player>button{
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.players__button {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  justify-content: space-between; 
+  padding-top: 1em; 
+}
+
 button {
   color: #ffffff;
   border: 0;

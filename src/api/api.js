@@ -1,4 +1,4 @@
-// V2
+// V3 October 5th, 2019
 const fetch = require('node-fetch');
 const xpath = require('xpath')
 const dom = require('xmldom').DOMParser
@@ -69,8 +69,8 @@ export async function getPlayers(idTeam) {
     const res = await fetch(proxy_url + base_url + '/team/' + idTeam);
     html = await res.text();
     var doc = new dom({errorHandler:{warning:(w) => {return}}}).parseFromString(html);
-    const nodes = xpath.select("//table[preceding-sibling::h4[contains(text(),'Squad')]]/tbody/tr", doc);
-    //console.log(nodes);
+    const nodes = xpath.select("//table[preceding-sibling::h6[contains(text(),'Squad')]]/tbody/tr", doc);
+    console.log(nodes);
     var dict = [];
 
     for(var i = 0; i < nodes.length; i++) {
@@ -96,6 +96,7 @@ async function getPlayerStats(idPlayer) {
     // Player Info 
     // Age 28 (Jul 29, 1989) 6'2" 194lbs
     var nodeInfo = xpath.select("//div[@class='info']/div/text()[last()]", doc);
+    //console.log(nodeInfo[0].data.trim().split(" "))
     
     // Trimming the string to remove the spaces at the start
     var info = nodeInfo[0].data.trim().split(" ");
@@ -132,13 +133,42 @@ async function getPlayerStats(idPlayer) {
      * Please support to Valentin Umbach.
      */
 
-    let score_labels = ["Crossing", "Finishing", "Heading Accuracy", "Short Passing", "Volleys",
-                  "Dribbling", "Curve", "FK Accuracy", "Long Passing", "Ball Control",
-                  "Acceleration", "Sprint Speed", "Agility", "Reactions", "Balance",
-                  "Shot Power", "Jumping", "Stamina", "Strength", "Long Shots",
-                  "Aggression", "Interceptions", "Positioning", "Vision", "Penalties", "Composure",
-                  "Marking", "Standing Tackle", "Sliding Tackle",
-                  "GK Diving", "GK Handling", "GK Kicking", "GK Positioning", "GK Reflexes"];
+    let score_labels = [
+      "Crossing",
+      "Finishing",
+      "Heading Accuracy",
+      "Short Passing",
+      "Volleys",
+      "Dribbling",
+      "Curve",
+      "FK Accuracy",
+      "Long Passing",
+      "Ball Control",
+      "Acceleration",
+      "Sprint Speed",
+      "Agility",
+      "Reactions",
+      "Balance",
+      "Shot Power",
+      "Jumping",
+      "Stamina",
+      "Strength",
+      "Long Shots",
+      "Aggression",
+      "Interceptions",
+      "Positioning",
+      "Vision",
+      "Penalties",
+      "Composure",
+      "Defensive Awareness", // change 'Marking' by 'Defensive Awareness' since API V3 and SOFIFA [FIFA 20 Oct 2019 04]
+      "Standing Tackle",
+      "Sliding Tackle",
+      "GK Diving",
+      "GK Handling",
+      "GK Kicking",
+      "GK Positioning",
+      "GK Reflexes"
+    ];
 
     let score_value;
     for(let i=0; i < score_labels.length; i++) {

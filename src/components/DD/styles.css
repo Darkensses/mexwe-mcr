@@ -5,6 +5,7 @@
   user-select: none;
   position: relative;
   width: 400px;
+  margin-bottom: 1em;
 }
 .dd-header {
   display: -webkit-box;
@@ -50,7 +51,7 @@
   padding: 15px 0;
   max-height: 315px;
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;  
 }
 .dd-list-item {
   font-weight: 300;
