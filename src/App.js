@@ -98,7 +98,7 @@ class App extends Component {
     console.log(jsonPlayers);
 
     // http://localhost:9000/mcr
-    await fetch("https://snappy-storm-153720.appspot.com/mcr", {
+    await fetch("https://salty-woodland-44286.herokuapp.com/mcr", {
       method: "POST",
       headers: {
         Accept: "application/json",
