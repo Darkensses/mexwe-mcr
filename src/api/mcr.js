@@ -323,7 +323,7 @@ function bonusGkResponse(position, defense){
 
 // stats: offense + ... + response -> SUMA(I696:X696)
 function stats(player) {
-    let sum =
+    return (
       player.offense +
       player.defense +
       player.bodyBalance +
@@ -340,8 +340,8 @@ function stats(player) {
       player.dribble +
       player.curve +
       player.agression +
-      player.response;
-    return sum;
+      player.response
+    );
 }
 
 // statsFix: bonusFoot + bonusOutside + bonusGkDefense + bonusGkResponse + stats
