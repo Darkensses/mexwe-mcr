@@ -27,7 +27,7 @@ function getBlobFromB64(data) {
   return blob;
 }
 
-module.exports.CreateMCR = async function (players) {
+export default async function CreateMCR(players) {
   let blob = getBlobFromB64(mcrB64);
   let buffer = await new Response(blob).arrayBuffer();
   let data = new DataView(buffer);

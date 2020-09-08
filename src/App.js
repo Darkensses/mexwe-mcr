@@ -7,7 +7,7 @@ import "./App.css";
 
 
 import * as MCR from "./api/converter"
-import { CreateMCR } from "./api/coreMCR";
+import CreateMCR from "./api/coreMCR";
 import ligaMX from "./ligaMX.json";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
