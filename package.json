@@ -1,6 +1,6 @@
 {
   "name": "we-mcr",
-  "version": "alpha",
+  "version": "alpha.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
