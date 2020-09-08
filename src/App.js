@@ -1,304 +1,164 @@
-import React, { Component } from "react";
-import * as api from "./api/api";
-import * as mcr from "./api/mcr";
-import DD from "./components/DD";
-//import LoadingOverlay from 'react-loading-overlay';
+import React, { useState, useEffect } from "react";
+import DropDown from "./components/DropDown";
+import PlayerBox from "./components/PlayerBox";
+import Modal from "./components/Modal";
+import Editor from "./components/Editor";
 import "./App.css";
-import Overlay from "./components/Overlay";
-import MatrixWaveLoader from "./components/MatrixWaveLoader";
-import DivPlayer from "./components/DivPlayer";
-import * as ObjectsToCsv from "objects-to-csv";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
-class App extends Component {
-  
-  constructor(props) {
-      super(props);
-      this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
-      this.state = {
-      isLoading: false,
-      leagues: [],
-      teams: [],
-      players: [],
-      playersWE2002: [],
-      checkedListAll: [],
-      ItemsChecked: false,
-      auxplayer: [{
-        name: "J.Orozco",
-        position: "GK",
-        shirtNumber: 1,
-      },
-      {
-        name: "Abella",
-        position: "CB",
-        shirtNumber: 4,
-      },
-      {
-        name: "Furch",
-        position: "CF",
-        shirtNumber: 10,
-      }],      
-      auxLeagues: [],
-      auxTeams: [],
-    };    
+
+import * as MCR from "./api/converter"
+import { CreateMCR } from "./api/coreMCR";
+import ligaMX from "./ligaMX.json";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+let teams_ligaMX = ligaMX.map((t) => t.name_team);
+
+function App() {
+  let [team, setTeam] = useState([]);
+  let [teamName, setTeamName] = useState("");
+  let [mcrPlayers, setMCRPlayers] = useState([]);
+  let [openModal, setOpenModal] = useState(false)
+  let [ indexMCR, setIndexMCR ] = useState(-1);
+
+  useEffect(() => {
+    console.log(mcrPlayers);
+  }, [mcrPlayers]);
+
+  const handleSelect = (index) => {
+    let teamSel = ligaMX[index].players;
+    setTeamName(ligaMX[index].name_team)
+    console.log(teamSel)
+    setTeam(teamSel)    
   }
 
-  getLeagues = async () => {    
-    /*fetch("http://localhost:9000/mcr/download")
-    .then(res => res)
-    .then(res => console.log(res))
-    .catch(err => err);*/
-    this.setState({ isLoading: true });
-    const leagues = await api.getLeagues();
-    this.setState({ leagues: leagues, isLoading: false });    
-    this.getArrayValues(this.state.leagues, 'auxLeagues');
-  };
+  const handleView = (index) => {
+    console.log(team[index])
+  }
 
-  getTeams = async index => {
-    this.setState({ isLoading: true });
-    //const teams = await api.getTeams(this.state.leagues[index].id);
-    const teams = await api.getTeams(index);
-    this.setState({ teams: teams, isLoading: false });   
-    this.getArrayValues(this.state.teams, 'auxTeams'); 
-  };
+  const handleMCR = (index) => {
+    console.log(mcrPlayers[index])
+    setOpenModal(true)
+    setIndexMCR(index)
+  }
 
-  getPlayers = async index => {
-    this.setState({ isLoading: true });
-    const players = await api.getPlayers(index);
-    let playersWE2002 = mcr.toWE2002(players);
-    this.setState({ players: players, playersWE2002: playersWE2002, isLoading: false });
-    console.log(playersWE2002);    
-
-    /*fetch("http://localhost:9000/mcr", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(playersWE2002)
-    })
-      .then(res => res.text())
-      .then(res => console.log(res))
-      .catch(err => err);*/
-  };
-
-  downloadMCR = async () => {
-    if(this.state.checkedListAll.length < 23) {
-      toast.error(`🤯 Selection has ${this.state.checkedListAll.length} of 23 players: the team doesn't have enough players.`);
-      return;
-    }    
-
-    let jsonPlayers = [];
-    let selectedPlayers = this.state.checkedListAll
-    for (var i = 0; i < selectedPlayers.length; i++) {
-      jsonPlayers.push(this.state.playersWE2002[selectedPlayers[i]]);            
+  const handleAddPlayer = (player) => {
+    if(mcrPlayers.length < 23) {
+      let mcrPlayer = MCR.toWE2002([player])
+      mcrPlayer[0].shirtNumber = mcrPlayers.length + 1;
+      setMCRPlayers(old => [...old, mcrPlayer[0]]);
     }
-
-    console.log(jsonPlayers);
-
-    // http://localhost:9000/mcr
-    await fetch("https://salty-woodland-44286.herokuapp.com/mcr", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(jsonPlayers)
-    })
-      .then(response => response.blob())
-      .then(blob => {
-        // 2. Create blob link to download
-        const url = window.URL.createObjectURL(new Blob([blob]));
-        const link = document.createElement("a");
-        link.href = url;
-        link.setAttribute("download", `mcr.mcr`);
-        // 3. Append to html page
-        document.body.appendChild(link);
-        // 4. Force download
-        link.click();
-        // 5. Clean up and remove the link
-        link.parentNode.removeChild(link);
-      })
-      .catch(err => err);
   }
 
-  downloadCSV = async () => {
-    if(this.state.players.length === 0) {
-      toast.error(`😬 Team is empty. Please Select a team to get all the players.`);
+  const handleRemovePlayer = (player) => {
+    if(mcrPlayers.length === 0) {
+      console.log("MCRS PLAYERS EMPTY")
       return;
     }
-    let csv = new ObjectsToCsv(this.state.playersWE2002);
 
-    // Return the CSV file as string:
-    let csvStr = await csv.toString();
-    var universalBOM = "\uFEFF";
-    const element = document.createElement("a");
-    element.href = encodeURI(
-      "data:text/csv;charset=utf-8," + universalBOM + csvStr
-    ); 
-    element.download = "mcr.csv";
-    document.body.appendChild(element); // Required for this to work in FireFox
-    element.click();
-    element.parentNode.removeChild(element);
-  }
-
-  getArrayValues = (arr, arrName) => {
-    var auxArr = [];
-    for (var key in Object.keys(arr)) {
-      auxArr.push({
-        id: arr[key].id,
-        title: arr[key].value,
-        key: arrName,
-        image: arr[key].img
-      });
-    }
-    console.log(auxArr);
-    //return auxArr;
-    this.setState({[arrName]: auxArr});
+    setMCRPlayers((old) => old.filter((item) => item !== player));
   };
 
-  compareSort ( a, b ){ return a - b; }
-
-  handleCheckboxClick = e => {        
-    let { checkedListAll } = this.state;
-    const { value, checked } = e.target;
-    console.log(value);    
-    if (checked && checkedListAll.length < 23) {
-      this.setState(prevState => ({
-        checkedListAll: [...prevState.checkedListAll, Number(value)].sort(this.compareSort)
-      }));
-    } else {      
-      this.setState(prevState => ({
-        checkedListAll: prevState.checkedListAll.filter(item => item !== Number(value))
-      }));
-      if(checkedListAll.length === 23) {
-        toast.info(`🙆‍ Team full: ${checkedListAll.length} of 23 players selected.`);
-      }
+  const selectAll = () => {
+    let players = team.length < 23 ? team.slice(mcrPlayers.length,team.length) : team.slice(mcrPlayers.length,23);
+    let index = mcrPlayers.length;
+    for(let i=0; i<players.length; i++){
+      let mcrPlayer = MCR.toWE2002([players[i]]);
+      mcrPlayer[0].shirtNumber = index += 1;
+      setMCRPlayers((old) => [...old, mcrPlayer[0]]);
     }
   }
 
-  selectAll = () => {
-    this.setState({checkedListAll: [], ItemsChecked: false})
-    let collection = [];
-    for(var i = 0; i < 23; i++) {
-      collection.push(i)
-    }
-
-    this.setState({
-      checkedListAll: collection.sort(this.compareSort),
-      ItemsChecked: true
-    });
+  const handleSliderEditor = (value, stat) => {
+    console.log(stat, value);
+    let mcrAux = [...mcrPlayers]
+    let paux ={...mcrPlayers[indexMCR]};
+    paux[stat] = value;
+    mcrAux[indexMCR] = paux;    
+    setMCRPlayers(mcrAux);
   }
 
-  selectedItems(e) {
-    const { value, checked } = e.target;
-    let { checkedListAll } = this.state;
+  const handleDownloadMCR = async () => {
+    if(mcrPlayers.length === 0) return;
 
-    if (checked) {
-      checkedListAll = [...checkedListAll, value];
-    } else {
-      checkedListAll = checkedListAll.filter(el => el !== value);
-      if (this.state.ItemsChecked) {
-        this.setState({
-          ItemsChecked: !this.state.ItemsChecked
-        });
-      }
-    }
-    this.setState({ checkedListAll });    
+    let mcr = await CreateMCR(mcrPlayers);
+
+    const url = window.URL.createObjectURL(new Blob([mcr]));
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", `mcr.mcr`);
+    document.body.appendChild(link);
+    link.click();
+    link.parentNode.removeChild(link);    
   }
 
-  // id: index, key: list
-  resetThenSet = (id, key) => {    
-    let temp = JSON.parse(JSON.stringify(this.state[key]))
-    temp.forEach(item => item.selected = false);
-    console.log(temp);
-    
-    let idx = temp.findIndex(x => x.id === id);
-    temp[idx].selected = true;
-    console.log(temp[idx])
-    this.setState({
-      [key]: temp
-    })
-  }
-
-  render() {    
-    const {auxplayer} = this.state;
-
-    return (
-      <div>
-        <ToastContainer
-          position="bottom-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnVisibilityChange
-          draggable
-          pauseOnHover
-        />
-
-        <Overlay
-          active={this.state.isLoading}
-          text="Loading..."
-          loader={<MatrixWaveLoader />}
-        />
-        <div className="app__header">
-          <h1>MexWE</h1>
-          <hr className="colored" />
-          <span>
-            Scraping tool ⛏🔧 to get the stats from SOFIFA 🌐 and then convert
-            them to a MCR PSX 🎮
-          </span>
+  return (
+    <div className="App">
+      <Header />
+      <div className="App__dropdowns">
+        <DropDown placeholder="Pick a team..." list={teams_ligaMX} selected={handleSelect} />
+      </div>
+      <div className="App__panel">
+        <div className="App__panel__player">
+          <h2>{teamName ? teamName : "Team"}</h2>
+          <button onClick={selectAll}>Select {23 - mcrPlayers.length} player(s)</button>
+          {team.map((player, index) => (
+            <PlayerBox
+              key={player.id_player}
+              name={player.name}
+              number={player.jerseyNumber}
+              position={player.position}
+              onClickButton={() => handleAddPlayer(player)}
+            />
+          ))}
         </div>
-
-        <div className="app__content">
-          <div className="app__content__player">
-            <button onClick={this.getLeagues}>Connect</button>
-            <DD
-              title="Select League"
-              list={this.state.auxLeagues}
-              resetThenSet={this.resetThenSet}
-              onChange={selected => this.getTeams(selected.id)}
+        <div className="App__panel__mcr">
+          <h2>{`Jugadores MCR (${mcrPlayers.length}/23)`}</h2>
+          <button onClick={handleDownloadMCR}>Download MCR</button>
+          {mcrPlayers.map((player, index) => (
+            <PlayerBox
+              key={player.name + index}
+              name={player.name}
+              number={player.shirtNumber}
+              position={player.position}
+              clickView={() => handleView(index)}
+              clickMCR={() => handleMCR(index)}
+              onClickButton={() => handleRemovePlayer(player)}
+              editable
             />
-            <DD
-              title="Select Team"
-              list={this.state.auxTeams}
-              resetThenSet={this.resetThenSet}
-              onChange={selected => this.getPlayers(selected.id)}
-            />
-
-            <div className="players__button">
-              <button onClick={this.selectAll}>Select default</button>
-              <button onClick={this.downloadMCR}>Download MCR</button>
-              <button onClick={this.downloadCSV}>Download CSV</button>
-            </div>
-
-            {this.state.players.map((player, index) => (
-              <DivPlayer
-                key={index}
-                name={player.name}
-                number={player.shirtNumber}
-                position={player.position}
-                item={index}
-                handleCheckboxClick={this.handleCheckboxClick}
-                checkedListAll={this.state.checkedListAll}
-                ItemsChecked={this.state.ItemsChecked}
-              />
-            ))}
-
-            {
-              <pre>
-                Selected List:{" "}
-                {JSON.stringify(this.state.checkedListAll, null, 2)}
-              </pre>
-            }
-          </div>
+          ))}
         </div>
       </div>
-    );
+      <Modal
+        isOpen={openModal}
+        title={indexMCR !== -1 ? <PlayerNameNumber onChange={handleSliderEditor} name={mcrPlayers[indexMCR].name} number={mcrPlayers[indexMCR].shirtNumber}/> : null}
+        closeModal={() => setOpenModal(false)}
+      >
+        {indexMCR !== -1 ? (
+          <Editor stats={mcrPlayers[indexMCR]} onSlide={handleSliderEditor} />
+        ) : null}
+      </Modal>
+      <Footer />
+    </div>
+  );
+}
+
+function PlayerNameNumber(props) {
+  const handleChange = (e, stat) => {
+    props.onChange(e.target.value, stat);
   }
+  return(
+    <div className="pnn">
+      <div style={{width: "200px", position: "relative", marginRight: "1em"}}>
+        <input maxLength="10" onChange={e=>handleChange(e,"name")} className="pnn__input" type="text" placeholder="Placeholder Text" value={props.name}/>
+        <span className="focus-border"></span>
+      </div>
+      <div style={{width: "80px", position: "relative"}}>
+        <input maxLength="2" onChange={e=>handleChange(e,"shirtNumber")} className="pnn__input" type="text" placeholder="Placeholder Text" value={props.number}/>
+        <span className="focus-border"></span>
+      </div>
+    </div>
+  )
 }
 
 export default App;

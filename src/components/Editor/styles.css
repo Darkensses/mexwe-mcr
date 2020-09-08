@@ -1,0 +1,23 @@
+.Editor {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.Editor__stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 50%;
+    /*flex: 1;*/
+}
+
+.Editor__stat__val {
+    padding-left: 10px;
+}
+
+.pretty {
+    margin: 0;
+}

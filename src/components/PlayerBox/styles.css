@@ -1,0 +1,66 @@
+.PlayerBox {
+    width: 280px;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    box-shadow: 6px 6px 16px 0 rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+    align-items: center;    
+    padding-left: 10px;
+    font-size: 16px;
+    margin-bottom: 1em;
+}
+
+.PlayerBox__name {
+    flex-grow: 1;    
+}
+
+.PlayerBox__num {
+    width: 3em;
+    height: 100%;
+    background: rgba(24, 255, 255, 0.3);    
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PlayerBox__pos {
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PlayerBox__view {
+    display: flex;
+    flex-flow: column;
+    color: #666666;
+}
+
+.PlayerBox__view span:hover {
+    cursor: pointer;
+    color: #0D47A1;
+}
+
+.PlayerBox__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+}
+
+.PlayerBox__btn button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    box-shadow: -2px 2px 8px 0 rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    color: #666666;
+    cursor: pointer;
+}
