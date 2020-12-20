@@ -5,3 +5,15 @@
     align-items: center;
     justify-content: center;
 }
+
+.footer a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.footer a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}

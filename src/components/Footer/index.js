@@ -18,9 +18,10 @@ function Footer(props) {
     <div className="footer">
       <p style={{ textAlign: "center" }}>
         Created with <Emoji symbol={"💖"} label="heart" /> and{" "}
-        <Emoji symbol={"🤘"} label="heart" /> by MexWe © 2020.
+        <Emoji symbol={"🤘"} label="heart" /> by MexWe © 2021.
         <br />
-        <FaGithub size={24} /> <FaFacebook size={24} />
+        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/MexWEdition"><FaGithub size={24} /></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Darkensses/mexwe-mcr"><FaFacebook size={24} /></a>
       </p>
     </div>
   );
