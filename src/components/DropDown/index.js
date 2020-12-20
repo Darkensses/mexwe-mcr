@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { useTrail, a, useSpring } from "react-spring";
 import "./styles.css";
@@ -8,6 +8,12 @@ const config = { mass: 5, tension: 3000, friction: 200 };
 function DropDown({ list, selected, placeholder, style }) {
   let [isOpen, setIsOpen] = useState(false);
   let [itemSelected, setItemSelected] = useState('');
+
+  useEffect(()=>{
+    if(!list.length) {
+      setItemSelected('');
+    }
+  })
 
   const trail = useTrail(list.length, {
     config,
