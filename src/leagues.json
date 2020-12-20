@@ -1,0 +1,10 @@
+[
+    {"data":"english_premier_league.json","id_league":13,"name_league":"English Premier League"},
+    {"data":"french_ligue_1.json","id_league":16,"name_league":"French Ligue 1"},
+    {"data":"german_1_bundesliga.json","id_league":19,"name_league":"German 1. Bundesliga"},
+    {"data":"italian_serie_a.json","id_league":31,"name_league":"Italian Serie A"},
+    {"data":"spain_primera_division.json","id_league":53,"name_league":"Spain Primera Division"},
+    {"data":"mexican_liga_mx.json","id_league":341,"name_league":"Mexican Liga MX"},
+    {"data":"holland_eredivisie.json","id_league":10,"name_league":"Holland Eredivisie"},
+    {"data":"usa_major_league_soccer.json","id_league":39,"name_league":"USA Major League Soccer"}    
+]
