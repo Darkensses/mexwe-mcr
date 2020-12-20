@@ -8,13 +8,16 @@ import "./App.css";
 
 import * as MCR from "./api/converter"
 import CreateMCR from "./api/coreMCR";
-import ligaMX from "./ligaMX.json";
+import leaguesJSON from "./leagues.json";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-let teams_ligaMX = ligaMX.map((t) => t.name_team);
+const API_URL = "https://sheltered-depths-57882.herokuapp.com"
+let leagues = leaguesJSON.map((l) => l.name_league);
 
 function App() {
+  let [teamsData, setTeamsData] = useState([]);
+  let [teams, setTeams] = useState([]);
   let [team, setTeam] = useState([]);
   let [teamName, setTeamName] = useState("");
   let [mcrPlayers, setMCRPlayers] = useState([]);
@@ -26,10 +29,24 @@ function App() {
   }, [mcrPlayers]);
 
   const handleSelect = (index) => {
-    let teamSel = ligaMX[index].players;
-    setTeamName(ligaMX[index].name_team)
+    let teamSel = teamsData[index].players;
+    setTeamName(teamsData[index].name_team)
     console.log(teamSel)
     setTeam(teamSel)    
+  }
+
+  const handleLeagueSelect = (index) => {
+    let leagueSel = leaguesJSON[index].id_league;    
+    setTeams([]);
+    setTeamName('');
+    setTeam([]);
+    fetch(`${API_URL}/leagues/${leagueSel}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+      setTeamsData(data);
+      setTeams(data.map((t) => t.name_team));
+    })
   }
 
   const handleView = (index) => {
@@ -96,7 +113,10 @@ function App() {
     <div className="App">
       <Header />
       <div className="App__dropdowns">
-        <DropDown placeholder="Pick a team..." list={teams_ligaMX} selected={handleSelect} />
+        <DropDown placeholder="Pick a League..." list={leagues} selected={handleLeagueSelect} />
+      </div>
+      <div className="App__dropdowns">        
+        <DropDown placeholder="Pick a team..." list={teams} selected={handleSelect} />
       </div>
       <div className="App__panel">
         <div className="App__panel__player">
