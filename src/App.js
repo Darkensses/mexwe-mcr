@@ -155,7 +155,7 @@ function App() {
       </div>
       <Modal
         isOpen={openModal}
-        title={indexMCR !== -1 ? <PlayerNameNumber onChange={handleSliderEditor} id={mcrPlayers[indexMCR].id_player} name={mcrPlayers[indexMCR].name} number={mcrPlayers[indexMCR].shirtNumber}/> : null}
+        title={indexMCR !== -1 ? <PlayerNameNumber onChange={handleSliderEditor} id={mcrPlayers[indexMCR]?.id_player} name={mcrPlayers[indexMCR].name} number={mcrPlayers[indexMCR].shirtNumber}/> : null}
         closeModal={() => setOpenModal(false)}
       >
         {indexMCR !== -1 ? (
@@ -179,7 +179,7 @@ function PlayerNameNumber(props) {
   }
   return(
     <>
-    { props?.id && <img src={`https://cdn.sofifa.net/players/${handleIdPlayer(props.id)}/22_180.png`} />}
+    {props?.id && <img src={`https://cdn.sofifa.net/players/${handleIdPlayer(props?.id)}/22_180.png`} alt={props.name}/>}
     <div className="pnn">
       <div style={{width: "200px", position: "relative", marginRight: "1em"}}>
         <input maxLength="10" onChange={e=>handleChange(e,"name")} className="pnn__input" type="text" placeholder="Placeholder Text" value={props.name}/>
