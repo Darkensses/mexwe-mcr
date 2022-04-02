@@ -66,7 +66,7 @@ function DropDown({ list, selected, placeholder, style }) {
                 transform: x.interpolate((x) => `translate3d(0,${x}px,0)`),
               }}
             >
-              {list[index].name ? <img src={`https://cdn.sofifa.net/teams/${list[index].id}/30.png`} alt={list[index]?.id} /> : ""}&nbsp;
+              {list[index].id ? <img src={`https://cdn.sofifa.net/teams/${list[index].id}/30.png`} alt={list[index]?.id} /> : ""}&nbsp;
               {list[index].name ? list[index].name : list[index]}
             </a.li>
           ))}
