@@ -15,8 +15,15 @@ function PlayerBox(props) {
       props.clickMCR();
     };
 
+    const handleIdPlayer = (id) => {
+      if(!id) return;
+      const splitted = id.split('');
+        return splitted[0]+splitted[1]+splitted[2]+"/"+splitted[3]+splitted[4]+splitted[5];
+    }
+
     return (
       <div className="PlayerBox">
+        {props?.id ? <img src={`https://cdn.sofifa.net/players/${handleIdPlayer(props.id)}/22_60.png`} alt="avatar"/> : ""}
         <div className="PlayerBox__name">{props.name}</div>
         <div className="PlayerBox__num">{props.number}</div>
         <div className="PlayerBox__pos">{props.position}</div>

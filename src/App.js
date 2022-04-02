@@ -63,6 +63,7 @@ function App() {
     if(mcrPlayers.length < 23) {
       let mcrPlayer = MCR.toWE2002([player])
       mcrPlayer[0].shirtNumber = mcrPlayers.length + 1;
+      mcrPlayer[0].id_player = player.id_player;
       setMCRPlayers(old => [...old, mcrPlayer[0]]);
     }
   }
@@ -82,6 +83,7 @@ function App() {
     for(let i=0; i<players.length; i++){
       let mcrPlayer = MCR.toWE2002([players[i]]);
       mcrPlayer[0].shirtNumber = index += 1;
+      mcrPlayer[0].id_player = players[i].id_player;
       setMCRPlayers((old) => [...old, mcrPlayer[0]]);
     }
   }
@@ -124,6 +126,7 @@ function App() {
           <button onClick={selectAll}>Select {23 - mcrPlayers.length} player(s)</button>
           {team.map((player, index) => (
             <PlayerBox
+              id={player.id_player}
               key={player.id_player}
               name={player.name}
               number={player.jerseyNumber}
@@ -137,6 +140,7 @@ function App() {
           <button onClick={handleDownloadMCR}>Download MCR</button>
           {mcrPlayers.map((player, index) => (
             <PlayerBox
+              id={player.id_player}
               key={player.name + index}
               name={player.name}
               number={player.shirtNumber}
@@ -151,7 +155,7 @@ function App() {
       </div>
       <Modal
         isOpen={openModal}
-        title={indexMCR !== -1 ? <PlayerNameNumber onChange={handleSliderEditor} name={mcrPlayers[indexMCR].name} number={mcrPlayers[indexMCR].shirtNumber}/> : null}
+        title={indexMCR !== -1 ? <PlayerNameNumber onChange={handleSliderEditor} id={mcrPlayers[indexMCR].id_player} name={mcrPlayers[indexMCR].name} number={mcrPlayers[indexMCR].shirtNumber}/> : null}
         closeModal={() => setOpenModal(false)}
       >
         {indexMCR !== -1 ? (
@@ -163,11 +167,19 @@ function App() {
   );
 }
 
+function handleIdPlayer(id){
+  if(!id) return;
+  const splitted = id.split('');
+    return splitted[0]+splitted[1]+splitted[2]+"/"+splitted[3]+splitted[4]+splitted[5];
+}
+
 function PlayerNameNumber(props) {
   const handleChange = (e, stat) => {
     props.onChange(e.target.value, stat);
   }
   return(
+    <>
+    { props?.id && <img src={`https://cdn.sofifa.net/players/${handleIdPlayer(props.id)}/22_180.png`} />}
     <div className="pnn">
       <div style={{width: "200px", position: "relative", marginRight: "1em"}}>
         <input maxLength="10" onChange={e=>handleChange(e,"name")} className="pnn__input" type="text" placeholder="Placeholder Text" value={props.name}/>
@@ -178,6 +190,7 @@ function PlayerNameNumber(props) {
         <span className="focus-border"></span>
       </div>
     </div>
+    </>
   )
 }
 
