@@ -1,0 +1,3136 @@
+[
+    {
+        "id": 13,
+        "value": "English Premier League (1)",
+        "childs": [
+            {
+                "id": "1",
+                "value": "Arsenal"
+            },
+            {
+                "id": "2",
+                "value": "Aston Villa"
+            },
+            {
+                "id": "1925",
+                "value": "Brentford"
+            },
+            {
+                "id": "1808",
+                "value": "Brighton & Hove Albion"
+            },
+            {
+                "id": "1796",
+                "value": "Burnley"
+            },
+            {
+                "id": "5",
+                "value": "Chelsea"
+            },
+            {
+                "id": "1799",
+                "value": "Crystal Palace"
+            },
+            {
+                "id": "7",
+                "value": "Everton"
+            },
+            {
+                "id": "8",
+                "value": "Leeds United"
+            },
+            {
+                "id": "95",
+                "value": "Leicester City"
+            },
+            {
+                "id": "9",
+                "value": "Liverpool"
+            },
+            {
+                "id": "10",
+                "value": "Manchester City"
+            },
+            {
+                "id": "11",
+                "value": "Manchester United"
+            },
+            {
+                "id": "13",
+                "value": "Newcastle United"
+            },
+            {
+                "id": "1792",
+                "value": "Norwich City"
+            },
+            {
+                "id": "17",
+                "value": "Southampton"
+            },
+            {
+                "id": "18",
+                "value": "Tottenham Hotspur"
+            },
+            {
+                "id": "1795",
+                "value": "Watford"
+            },
+            {
+                "id": "19",
+                "value": "West Ham United"
+            },
+            {
+                "id": "110",
+                "value": "Wolverhampton Wanderers"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "value": "French Ligue 1 (1)",
+        "childs": [
+            {
+                "id": "69",
+                "value": "AS Monaco"
+            },
+            {
+                "id": "1819",
+                "value": "AS Saint-Étienne"
+            },
+            {
+                "id": "1530",
+                "value": "Angers SCO"
+            },
+            {
+                "id": "1815",
+                "value": "Clermont Foot 63"
+            },
+            {
+                "id": "294",
+                "value": "ESTAC Troyes"
+            },
+            {
+                "id": "59",
+                "value": "FC Girondins de Bordeaux"
+            },
+            {
+                "id": "217",
+                "value": "FC Lorient"
+            },
+            {
+                "id": "68",
+                "value": "FC Metz"
+            },
+            {
+                "id": "71",
+                "value": "FC Nantes"
+            },
+            {
+                "id": "65",
+                "value": "LOSC Lille"
+            },
+            {
+                "id": "70",
+                "value": "Montpellier Hérault SC"
+            },
+            {
+                "id": "72",
+                "value": "OGC Nice"
+            },
+            {
+                "id": "66",
+                "value": "Olympique Lyonnais"
+            },
+            {
+                "id": "219",
+                "value": "Olympique de Marseille"
+            },
+            {
+                "id": "73",
+                "value": "Paris Saint-Germain"
+            },
+            {
+                "id": "76",
+                "value": "RC Strasbourg Alsace"
+            },
+            {
+                "id": "64",
+                "value": "Racing Club de Lens"
+            },
+            {
+                "id": "378",
+                "value": "Stade Brestois 29"
+            },
+            {
+                "id": "74",
+                "value": "Stade Rennais FC"
+            },
+            {
+                "id": "379",
+                "value": "Stade de Reims"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "value": "German 1. Bundesliga (1)",
+        "childs": [
+            {
+                "id": "31",
+                "value": "1. FC Köln"
+            },
+            {
+                "id": "1831",
+                "value": "1. FC Union Berlin"
+            },
+            {
+                "id": "169",
+                "value": "1. FSV Mainz 05"
+            },
+            {
+                "id": "32",
+                "value": "Bayer 04 Leverkusen"
+            },
+            {
+                "id": "22",
+                "value": "Borussia Dortmund"
+            },
+            {
+                "id": "23",
+                "value": "Borussia Mönchengladbach"
+            },
+            {
+                "id": "159",
+                "value": "DSC Arminia Bielefeld"
+            },
+            {
+                "id": "1824",
+                "value": "Eintracht Frankfurt"
+            },
+            {
+                "id": "100409",
+                "value": "FC Augsburg"
+            },
+            {
+                "id": "21",
+                "value": "FC Bayern München"
+            },
+            {
+                "id": "166",
+                "value": "Hertha BSC"
+            },
+            {
+                "id": "112172",
+                "value": "RB Leipzig"
+            },
+            {
+                "id": "165",
+                "value": "SpVgg Greuther Fürth"
+            },
+            {
+                "id": "25",
+                "value": "Sport-Club Freiburg"
+            },
+            {
+                "id": "10029",
+                "value": "TSG Hoffenheim"
+            },
+            {
+                "id": "36",
+                "value": "VfB Stuttgart"
+            },
+            {
+                "id": "160",
+                "value": "VfL Bochum 1848"
+            },
+            {
+                "id": "175",
+                "value": "VfL Wolfsburg"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "value": "Italian Serie A (1)",
+        "childs": [
+            {
+                "id": "47",
+                "value": "AC Milan"
+            },
+            {
+                "id": "39",
+                "value": "Atalanta"
+            },
+            {
+                "id": "189",
+                "value": "Bologna"
+            },
+            {
+                "id": "1842",
+                "value": "Cagliari"
+            },
+            {
+                "id": "1746",
+                "value": "Empoli"
+            },
+            {
+                "id": "110374",
+                "value": "Fiorentina"
+            },
+            {
+                "id": "110556",
+                "value": "Genoa"
+            },
+            {
+                "id": "206",
+                "value": "Hellas Verona"
+            },
+            {
+                "id": "44",
+                "value": "Inter"
+            },
+            {
+                "id": "45",
+                "value": "Juventus"
+            },
+            {
+                "id": "46",
+                "value": "Lazio"
+            },
+            {
+                "id": "48",
+                "value": "Napoli"
+            },
+            {
+                "id": "52",
+                "value": "Roma"
+            },
+            {
+                "id": "110741",
+                "value": "Spezia"
+            },
+            {
+                "id": "54",
+                "value": "Torino F.C."
+            },
+            {
+                "id": "1837",
+                "value": "U.C. Sampdoria"
+            },
+            {
+                "id": "111974",
+                "value": "U.S. Sassuolo Calcio"
+            },
+            {
+                "id": "110373",
+                "value": "US Salernitana 1919"
+            },
+            {
+                "id": "55",
+                "value": "Udinese Calcio"
+            },
+            {
+                "id": "205",
+                "value": "Venezia FC"
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "value": "Spain Primera Division (1)",
+        "childs": [
+            {
+                "id": "448",
+                "value": "Athletic Club de Bilbao"
+            },
+            {
+                "id": "240",
+                "value": "Atlético de Madrid"
+            },
+            {
+                "id": "479",
+                "value": "CA Osasuna"
+            },
+            {
+                "id": "1968",
+                "value": "Cádiz CF"
+            },
+            {
+                "id": "463",
+                "value": "Deportivo Alavés"
+            },
+            {
+                "id": "468",
+                "value": "Elche CF"
+            },
+            {
+                "id": "241",
+                "value": "FC Barcelona"
+            },
+            {
+                "id": "1860",
+                "value": "Getafe CF"
+            },
+            {
+                "id": "110832",
+                "value": "Granada CF"
+            },
+            {
+                "id": "1853",
+                "value": "Levante Unión Deportiva"
+            },
+            {
+                "id": "450",
+                "value": "RC Celta de Vigo"
+            },
+            {
+                "id": "452",
+                "value": "RCD Espanyol de Barcelona"
+            },
+            {
+                "id": "453",
+                "value": "RCD Mallorca"
+            },
+            {
+                "id": "480",
+                "value": "Rayo Vallecano"
+            },
+            {
+                "id": "449",
+                "value": "Real Betis Balompié"
+            },
+            {
+                "id": "243",
+                "value": "Real Madrid CF"
+            },
+            {
+                "id": "457",
+                "value": "Real Sociedad"
+            },
+            {
+                "id": "481",
+                "value": "Sevilla FC"
+            },
+            {
+                "id": "461",
+                "value": "Valencia CF"
+            },
+            {
+                "id": "483",
+                "value": "Villarreal CF"
+            }
+        ]
+    },
+    {
+        "id": 353,
+        "value": "Argentina Primera División \u00a0(1)",
+        "childs": [
+            {
+                "id": "111019",
+                "value": "Argentinos Juniors"
+            },
+            {
+                "id": "110394",
+                "value": "Arsenal de Sarandí"
+            },
+            {
+                "id": "111708",
+                "value": "Atlético Tucumán"
+            },
+            {
+                "id": "1877",
+                "value": "Boca Juniors"
+            },
+            {
+                "id": "111707",
+                "value": "Club Atlético Aldosivi"
+            },
+            {
+                "id": "110404",
+                "value": "Club Atlético Banfield"
+            },
+            {
+                "id": "112965",
+                "value": "Club Atlético Central Córdoba"
+            },
+            {
+                "id": "110406",
+                "value": "Club Atlético Colón"
+            },
+            {
+                "id": "111711",
+                "value": "Club Atlético Huracán"
+            },
+            {
+                "id": "110093",
+                "value": "Club Atlético Independiente"
+            },
+            {
+                "id": "110395",
+                "value": "Club Atlético Lanús"
+            },
+            {
+                "id": "112713",
+                "value": "Club Atlético Sarmiento"
+            },
+            {
+                "id": "112670",
+                "value": "Club Atlético Talleres"
+            },
+            {
+                "id": "111710",
+                "value": "Defensa y Justicia"
+            },
+            {
+                "id": "101083",
+                "value": "Estudiantes de La Plata"
+            },
+            {
+                "id": "101084",
+                "value": "Gimnasia y Esgrima La Plata"
+            },
+            {
+                "id": "111706",
+                "value": "Godoy Cruz"
+            },
+            {
+                "id": "110396",
+                "value": "Newell's Old Boys"
+            },
+            {
+                "id": "110581",
+                "value": "Patronato"
+            },
+            {
+                "id": "112689",
+                "value": "Platense"
+            },
+            {
+                "id": "101085",
+                "value": "Racing Club"
+            },
+            {
+                "id": "1876",
+                "value": "River Plate"
+            },
+            {
+                "id": "110580",
+                "value": "Rosario Central"
+            },
+            {
+                "id": "1013",
+                "value": "San Lorenzo de Almagro"
+            },
+            {
+                "id": "111716",
+                "value": "Unión de Santa Fe"
+            },
+            {
+                "id": "101088",
+                "value": "Vélez Sarsfield"
+            }
+        ]
+    },
+    {
+        "id": 351,
+        "value": "Australian Hyundai A-League (1)",
+        "childs": [
+            {
+                "id": "111393",
+                "value": "Adelaide United"
+            },
+            {
+                "id": "111395",
+                "value": "Brisbane Roar"
+            },
+            {
+                "id": "111396",
+                "value": "Central Coast Mariners"
+            },
+            {
+                "id": "114604",
+                "value": "Macarthur FC"
+            },
+            {
+                "id": "112224",
+                "value": "Melbourne City FC"
+            },
+            {
+                "id": "111397",
+                "value": "Melbourne Victory"
+            },
+            {
+                "id": "111398",
+                "value": "Newcastle Jets"
+            },
+            {
+                "id": "111399",
+                "value": "Perth Glory"
+            },
+            {
+                "id": "111400",
+                "value": "Sydney FC"
+            },
+            {
+                "id": "111766",
+                "value": "Wellington Phoenix"
+            },
+            {
+                "id": "112427",
+                "value": "Western Sydney Wanderers"
+            },
+            {
+                "id": "114023",
+                "value": "Western United FC"
+            }
+        ]
+    },
+    {
+        "id": 80,
+        "value": "Austrian Football Bundesliga (1)",
+        "childs": [
+            {
+                "id": "111821",
+                "value": "FC Flyeralarm Admira"
+            },
+            {
+                "id": "191",
+                "value": "FC Red Bull Salzburg"
+            },
+            {
+                "id": "256",
+                "value": "FK Austria Wien"
+            },
+            {
+                "id": "252",
+                "value": "LASK Linz"
+            },
+            {
+                "id": "111822",
+                "value": "RZ Pellets Wolfsberger AC"
+            },
+            {
+                "id": "15009",
+                "value": "SC Rheindorf Altach"
+            },
+            {
+                "id": "1787",
+                "value": "SK Austria Klagenfurt"
+            },
+            {
+                "id": "254",
+                "value": "SK Rapid Wien"
+            },
+            {
+                "id": "209",
+                "value": "SK Sturm Graz"
+            },
+            {
+                "id": "780",
+                "value": "SV Ried"
+            },
+            {
+                "id": "2017",
+                "value": "TSV Egger Glas Hartberg"
+            },
+            {
+                "id": "15040",
+                "value": "WSG Tirol"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "value": "Belgian Jupiler Pro League (1)",
+        "childs": [
+            {
+                "id": "231",
+                "value": "Club Brugge KV"
+            },
+            {
+                "id": "675",
+                "value": "K Beerschot VA"
+            },
+            {
+                "id": "674",
+                "value": "KAA Gent"
+            },
+            {
+                "id": "2013",
+                "value": "KAS Eupen"
+            },
+            {
+                "id": "673",
+                "value": "KRC Genk"
+            },
+            {
+                "id": "1750",
+                "value": "KSV Cercle Brugge"
+            },
+            {
+                "id": "100081",
+                "value": "KV Kortrijk"
+            },
+            {
+                "id": "110724",
+                "value": "KV Mechelen"
+            },
+            {
+                "id": "682",
+                "value": "KV Oostende"
+            },
+            {
+                "id": "100087",
+                "value": "Oud-Heverlee Leuven"
+            },
+            {
+                "id": "229",
+                "value": "RSC Anderlecht"
+            },
+            {
+                "id": "230",
+                "value": "Royal Antwerp FC"
+            },
+            {
+                "id": "670",
+                "value": "Royal Charleroi S.C."
+            },
+            {
+                "id": "2014",
+                "value": "Royale Union Saint-Gilloise"
+            },
+            {
+                "id": "15005",
+                "value": "SV Zulte Waregem"
+            },
+            {
+                "id": "112695",
+                "value": "Seraing"
+            },
+            {
+                "id": "680",
+                "value": "Sint-Truidense VV"
+            },
+            {
+                "id": "232",
+                "value": "Standard de Liège"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "value": "Campeonato Brasileiro Série A (1)",
+        "childs": [
+            {
+                "id": "112476",
+                "value": "Associação Chapecoense de Futebol"
+            },
+            {
+                "id": "112119",
+                "value": "Atlético Clube Goianiense"
+            },
+            {
+                "id": "1598",
+                "value": "Bahia"
+            },
+            {
+                "id": "111059",
+                "value": "Ceará Sporting Club"
+            },
+            {
+                "id": "1039",
+                "value": "Club Athletico Paranaense"
+            },
+            {
+                "id": "1035",
+                "value": "Clube Atlético Mineiro"
+            },
+            {
+                "id": "115530",
+                "value": "Cuiabá"
+            },
+            {
+                "id": "1043",
+                "value": "Flamengo"
+            },
+            {
+                "id": "567",
+                "value": "Fluminense"
+            },
+            {
+                "id": "111052",
+                "value": "Fortaleza"
+            },
+            {
+                "id": "1629",
+                "value": "Grêmio"
+            },
+            {
+                "id": "1048",
+                "value": "Internacional"
+            },
+            {
+                "id": "111041",
+                "value": "Juventude"
+            },
+            {
+                "id": "383",
+                "value": "Palmeiras"
+            },
+            {
+                "id": "112472",
+                "value": "RB Bragantino"
+            },
+            {
+                "id": "1053",
+                "value": "Santos"
+            },
+            {
+                "id": "1041",
+                "value": "Sport Club Corinthians Paulista"
+            },
+            {
+                "id": "598",
+                "value": "São Paulo"
+            }
+        ]
+    },
+    {
+        "id": 335,
+        "value": "Chilean Campeonato Nacional (1)",
+        "childs": [
+            {
+                "id": "112533",
+                "value": "CD Antofagasta"
+            },
+            {
+                "id": "111327",
+                "value": "CD Huachipato"
+            },
+            {
+                "id": "111328",
+                "value": "Club Deportivo Palestino"
+            },
+            {
+                "id": "110978",
+                "value": "Club de Deportes Cobresal"
+            },
+            {
+                "id": "110975",
+                "value": "Universidad Católica"
+            },
+            {
+                "id": "112535",
+                "value": "Unión La Calera"
+            }
+        ]
+    },
+    {
+        "id": 2012,
+        "value": "Chinese Super League (1)",
+        "childs": [
+            {
+                "id": "111768",
+                "value": "Beijing Guoan FC"
+            },
+            {
+                "id": "111769",
+                "value": "Changchun Yatai FC"
+            },
+            {
+                "id": "112165",
+                "value": "Chongqing Liangjiang Athletic"
+            },
+            {
+                "id": "112378",
+                "value": "Dalian Professional Football Club"
+            },
+            {
+                "id": "112429",
+                "value": "Guangzhou City"
+            },
+            {
+                "id": "111839",
+                "value": "Guangzhou FC"
+            },
+            {
+                "id": "112978",
+                "value": "Hebei FC"
+            },
+            {
+                "id": "111779",
+                "value": "Henan Songshan Longmen FC"
+            },
+            {
+                "id": "112961",
+                "value": "Qingdao FC"
+            },
+            {
+                "id": "111724",
+                "value": "Shandong Taishan"
+            },
+            {
+                "id": "112540",
+                "value": "Shanghai Port FC"
+            },
+            {
+                "id": "110955",
+                "value": "Shanghai Shenhua FC"
+            },
+            {
+                "id": "111773",
+                "value": "Shenzhen FC"
+            },
+            {
+                "id": "112985",
+                "value": "Shijiazhuang Ever Bright F.C."
+            },
+            {
+                "id": "111774",
+                "value": "Tianjin Jinmen Tiger FC"
+            },
+            {
+                "id": "112541",
+                "value": "Wuhan FC"
+            }
+        ]
+    },
+    {
+        "id": 336,
+        "value": "Colombian Liga Postobón (1)",
+        "childs": [
+            {
+                "id": "101099",
+                "value": "América de Cali"
+            },
+            {
+                "id": "101100",
+                "value": "Atlético Nacional"
+            },
+            {
+                "id": "111722",
+                "value": "Club Deportes Tolima"
+            },
+            {
+                "id": "101104",
+                "value": "Club Independiente Santa Fe"
+            },
+            {
+                "id": "101102",
+                "value": "Deportivo Cali"
+            },
+            {
+                "id": "111723",
+                "value": "Deportivo Pasto"
+            },
+            {
+                "id": "101101",
+                "value": "Junior FC"
+            },
+            {
+                "id": "112523",
+                "value": "La Equidad"
+            }
+        ]
+    },
+    {
+        "id": 317,
+        "value": "Croatian Prva HNL (1)",
+        "childs": [
+            {
+                "id": "211",
+                "value": "Dinamo Zagreb"
+            },
+            {
+                "id": "263",
+                "value": "Hajduk Split"
+            }
+        ]
+    },
+    {
+        "id": 318,
+        "value": "Cypriot First Division (1)",
+        "childs": [
+            {
+                "id": "100135",
+                "value": "APOEL Nicosia FC"
+            }
+        ]
+    },
+    {
+        "id": 319,
+        "value": "Czech Republic Gambrinus Liga (1)",
+        "childs": [
+            {
+                "id": "267",
+                "value": "AC Sparta Praha"
+            },
+            {
+                "id": "110468",
+                "value": "FC Viktoria Plze\u0148"
+            },
+            {
+                "id": "266",
+                "value": "SK Slavia Praha"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "value": "Danish Superliga (1)",
+        "childs": [
+            {
+                "id": "820",
+                "value": "Aalborg BK"
+            },
+            {
+                "id": "271",
+                "value": "Aarhus GF"
+            },
+            {
+                "id": "269",
+                "value": "Brøndby IF"
+            },
+            {
+                "id": "819",
+                "value": "F.C. København"
+            },
+            {
+                "id": "1516",
+                "value": "FC Midtjylland"
+            },
+            {
+                "id": "1788",
+                "value": "FC Nordsjælland"
+            },
+            {
+                "id": "272",
+                "value": "Odense Boldklub"
+            },
+            {
+                "id": "1786",
+                "value": "Randers FC"
+            },
+            {
+                "id": "270",
+                "value": "Silkeborg IF"
+            },
+            {
+                "id": "1447",
+                "value": "SønderjyskE"
+            },
+            {
+                "id": "822",
+                "value": "Vejle Boldklub"
+            },
+            {
+                "id": "1443",
+                "value": "Viborg FF"
+            }
+        ]
+    },
+    {
+        "id": 2018,
+        "value": "Ecuadorian Serie A (1)",
+        "childs": [
+            {
+                "id": "110981",
+                "value": "Barcelona Sporting Club"
+            },
+            {
+                "id": "110984",
+                "value": "CS Emelec"
+            },
+            {
+                "id": "114578",
+                "value": "Club Social y Deportivo Macará"
+            },
+            {
+                "id": "113723",
+                "value": "Guayaquil City FC"
+            },
+            {
+                "id": "112908",
+                "value": "Independiente del Valle"
+            },
+            {
+                "id": "110986",
+                "value": "LDU Quito"
+            },
+            {
+                "id": "110987",
+                "value": "Sociedad Deportiva Aucas"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "value": "English League Championship (2)",
+        "childs": [
+            {
+                "id": "1943",
+                "value": "AFC Bournemouth"
+            },
+            {
+                "id": "1932",
+                "value": "Barnsley"
+            },
+            {
+                "id": "88",
+                "value": "Birmingham City"
+            },
+            {
+                "id": "3",
+                "value": "Blackburn Rovers"
+            },
+            {
+                "id": "1926",
+                "value": "Blackpool"
+            },
+            {
+                "id": "1919",
+                "value": "Bristol City"
+            },
+            {
+                "id": "1961",
+                "value": "Cardiff City"
+            },
+            {
+                "id": "1800",
+                "value": "Coventry City"
+            },
+            {
+                "id": "91",
+                "value": "Derby County"
+            },
+            {
+                "id": "144",
+                "value": "Fulham"
+            },
+            {
+                "id": "1939",
+                "value": "Huddersfield Town"
+            },
+            {
+                "id": "1952",
+                "value": "Hull City"
+            },
+            {
+                "id": "1923",
+                "value": "Luton Town"
+            },
+            {
+                "id": "12",
+                "value": "Middlesbrough"
+            },
+            {
+                "id": "97",
+                "value": "Millwall"
+            },
+            {
+                "id": "14",
+                "value": "Nottingham Forest"
+            },
+            {
+                "id": "1938",
+                "value": "Peterborough United"
+            },
+            {
+                "id": "1801",
+                "value": "Preston North End"
+            },
+            {
+                "id": "15",
+                "value": "Queens Park Rangers"
+            },
+            {
+                "id": "1793",
+                "value": "Reading"
+            },
+            {
+                "id": "1794",
+                "value": "Sheffield United"
+            },
+            {
+                "id": "1806",
+                "value": "Stoke City"
+            },
+            {
+                "id": "1960",
+                "value": "Swansea City"
+            },
+            {
+                "id": "109",
+                "value": "West Bromwich Albion"
+            }
+        ]
+    },
+    {
+        "id": 60,
+        "value": "English League One (3)",
+        "childs": [
+            {
+                "id": "112259",
+                "value": "AFC Wimbledon"
+            },
+            {
+                "id": "110313",
+                "value": "Accrington Stanley"
+            },
+            {
+                "id": "4",
+                "value": "Bolton Wanderers"
+            },
+            {
+                "id": "15015",
+                "value": "Burton Albion"
+            },
+            {
+                "id": "1944",
+                "value": "Cambridge United"
+            },
+            {
+                "id": "89",
+                "value": "Charlton Athletic"
+            },
+            {
+                "id": "1936",
+                "value": "Cheltenham Town"
+            },
+            {
+                "id": "121",
+                "value": "Crewe Alexandra"
+            },
+            {
+                "id": "142",
+                "value": "Doncaster Rovers"
+            },
+            {
+                "id": "112260",
+                "value": "Fleetwood Town"
+            },
+            {
+                "id": "1802",
+                "value": "Gillingham"
+            },
+            {
+                "id": "94",
+                "value": "Ipswich Town"
+            },
+            {
+                "id": "149",
+                "value": "Lincoln City"
+            },
+            {
+                "id": "1798",
+                "value": "Milton Keynes Dons"
+            },
+            {
+                "id": "357",
+                "value": "Morecambe"
+            },
+            {
+                "id": "1951",
+                "value": "Oxford United"
+            },
+            {
+                "id": "1929",
+                "value": "Plymouth Argyle"
+            },
+            {
+                "id": "1790",
+                "value": "Portsmouth"
+            },
+            {
+                "id": "1797",
+                "value": "Rotherham United"
+            },
+            {
+                "id": "1807",
+                "value": "Sheffield Wednesday"
+            },
+            {
+                "id": "127",
+                "value": "Shrewsbury Town"
+            },
+            {
+                "id": "106",
+                "value": "Sunderland"
+            },
+            {
+                "id": "1917",
+                "value": "Wigan Athletic"
+            },
+            {
+                "id": "1933",
+                "value": "Wycombe Wanderers"
+            }
+        ]
+    },
+    {
+        "id": 61,
+        "value": "English League Two (4)",
+        "childs": [
+            {
+                "id": "381",
+                "value": "Barrow"
+            },
+            {
+                "id": "1804",
+                "value": "Bradford City"
+            },
+            {
+                "id": "1962",
+                "value": "Bristol Rovers"
+            },
+            {
+                "id": "1480",
+                "value": "Carlisle United"
+            },
+            {
+                "id": "1935",
+                "value": "Colchester United"
+            },
+            {
+                "id": "110890",
+                "value": "Crawley Town"
+            },
+            {
+                "id": "143",
+                "value": "Exeter City"
+            },
+            {
+                "id": "561",
+                "value": "Forest Green Rovers"
+            },
+            {
+                "id": "112222",
+                "value": "Harrogate Town"
+            },
+            {
+                "id": "1941",
+                "value": "Hartlepool United"
+            },
+            {
+                "id": "1958",
+                "value": "Leyton Orient"
+            },
+            {
+                "id": "1940",
+                "value": "Mansfield Town"
+            },
+            {
+                "id": "112254",
+                "value": "Newport County"
+            },
+            {
+                "id": "1930",
+                "value": "Northampton Town"
+            },
+            {
+                "id": "1920",
+                "value": "Oldham Athletic"
+            },
+            {
+                "id": "1928",
+                "value": "Port Vale"
+            },
+            {
+                "id": "1955",
+                "value": "Rochdale"
+            },
+            {
+                "id": "113926",
+                "value": "Salford City"
+            },
+            {
+                "id": "1949",
+                "value": "Scunthorpe United"
+            },
+            {
+                "id": "361",
+                "value": "Stevenage"
+            },
+            {
+                "id": "110799",
+                "value": "Sutton United"
+            },
+            {
+                "id": "1934",
+                "value": "Swindon Town"
+            },
+            {
+                "id": "15048",
+                "value": "Tranmere Rovers"
+            },
+            {
+                "id": "1803",
+                "value": "Walsall"
+            }
+        ]
+    },
+    {
+        "id": 62,
+        "value": "English National League (5)",
+        "childs": [
+            {
+                "id": "1947",
+                "value": "Wrexham AFC"
+            }
+        ]
+    },
+    {
+        "id": 322,
+        "value": "Finnish Veikkausliiga (1)",
+        "childs": [
+            {
+                "id": "100325",
+                "value": "HJK Helsinki"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "value": "French Ligue 2 (2)",
+        "childs": [
+            {
+                "id": "614",
+                "value": "AC Ajaccio"
+            },
+            {
+                "id": "57",
+                "value": "AJ Auxerre"
+            },
+            {
+                "id": "1823",
+                "value": "AS Nancy Lorraine"
+            },
+            {
+                "id": "1816",
+                "value": "Amiens SC"
+            },
+            {
+                "id": "1813",
+                "value": "Chamois Niortais Football Club"
+            },
+            {
+                "id": "110569",
+                "value": "Dijon FCO"
+            },
+            {
+                "id": "62",
+                "value": "En Avant de Guingamp"
+            },
+            {
+                "id": "226",
+                "value": "FC Sochaux-Montbéliard"
+            },
+            {
+                "id": "1805",
+                "value": "Grenoble Foot 38"
+            },
+            {
+                "id": "1738",
+                "value": "Le Havre AC"
+            },
+            {
+                "id": "224",
+                "value": "Nîmes Olympique"
+            },
+            {
+                "id": "111817",
+                "value": "Paris FC"
+            },
+            {
+                "id": "110321",
+                "value": "Pau FC"
+            },
+            {
+                "id": "111659",
+                "value": "Rodez Aveyron Football"
+            },
+            {
+                "id": "58",
+                "value": "SC Bastia"
+            },
+            {
+                "id": "210",
+                "value": "Stade Malherbe Caen"
+            },
+            {
+                "id": "1809",
+                "value": "Toulouse Football Club"
+            },
+            {
+                "id": "112552",
+                "value": "US Quevilly Rouen Métropole"
+            },
+            {
+                "id": "111276",
+                "value": "USL Dunkerque"
+            },
+            {
+                "id": "110456",
+                "value": "Valenciennes FC"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "value": "German 2. Bundesliga (2)",
+        "childs": [
+            {
+                "id": "111235",
+                "value": "1. FC Heidenheim 1846"
+            },
+            {
+                "id": "171",
+                "value": "1. FC Nürnberg"
+            },
+            {
+                "id": "27",
+                "value": "F.C. Hansa Rostock"
+            },
+            {
+                "id": "506",
+                "value": "FC Erzgebirge Aue"
+            },
+            {
+                "id": "111239",
+                "value": "FC Ingolstadt 04"
+            },
+            {
+                "id": "34",
+                "value": "FC Schalke 04"
+            },
+            {
+                "id": "110329",
+                "value": "FC St. Pauli"
+            },
+            {
+                "id": "110636",
+                "value": "Fortuna Düsseldorf"
+            },
+            {
+                "id": "28",
+                "value": "Hamburger SV"
+            },
+            {
+                "id": "485",
+                "value": "Hannover 96"
+            },
+            {
+                "id": "576",
+                "value": "Holstein Kiel"
+            },
+            {
+                "id": "1832",
+                "value": "Karlsruher SC"
+            },
+            {
+                "id": "10030",
+                "value": "SC Paderborn 07"
+            },
+            {
+                "id": "503",
+                "value": "SG Dynamo Dresden"
+            },
+            {
+                "id": "543",
+                "value": "SSV Jahn Regensburg"
+            },
+            {
+                "id": "110502",
+                "value": "SV Darmstadt 98"
+            },
+            {
+                "id": "110178",
+                "value": "SV Sandhausen"
+            },
+            {
+                "id": "38",
+                "value": "SV Werder Bremen"
+            }
+        ]
+    },
+    {
+        "id": 2076,
+        "value": "German 3. Bundesliga (3)",
+        "childs": [
+            {
+                "id": "29",
+                "value": "1. FC Kaiserslautern"
+            },
+            {
+                "id": "110588",
+                "value": "1. FC Magdeburg"
+            },
+            {
+                "id": "523",
+                "value": "1. FC Saarbrücken"
+            },
+            {
+                "id": "110676",
+                "value": "Borussia Dortmund II"
+            },
+            {
+                "id": "110500",
+                "value": "Eintracht Braunschweig"
+            },
+            {
+                "id": "115820",
+                "value": "FC Viktoria 1889 Berlin"
+            },
+            {
+                "id": "110197",
+                "value": "FC Würzburger Kickers"
+            },
+            {
+                "id": "110592",
+                "value": "FSV Zwickau"
+            },
+            {
+                "id": "110482",
+                "value": "Hallescher FC"
+            },
+            {
+                "id": "1825",
+                "value": "MSV Duisburg"
+            },
+            {
+                "id": "110691",
+                "value": "SC Freiburg II"
+            },
+            {
+                "id": "110597",
+                "value": "SV Meppen"
+            },
+            {
+                "id": "110532",
+                "value": "SV Waldhof Mannheim 07"
+            },
+            {
+                "id": "492",
+                "value": "SV Wehen Wiesbaden"
+            },
+            {
+                "id": "110501",
+                "value": "Sportclub Verl"
+            },
+            {
+                "id": "33",
+                "value": "TSV 1860 München"
+            },
+            {
+                "id": "110678",
+                "value": "TSV Havelse"
+            },
+            {
+                "id": "114398",
+                "value": "Türkgücü München"
+            },
+            {
+                "id": "487",
+                "value": "VfL Osnabrück"
+            },
+            {
+                "id": "110645",
+                "value": "Viktoria Köln"
+            }
+        ]
+    },
+    {
+        "id": 63,
+        "value": "Greek Super League (1)",
+        "childs": [
+            {
+                "id": "278",
+                "value": "AEK Athens"
+            },
+            {
+                "id": "280",
+                "value": "Olympiacos CFP"
+            },
+            {
+                "id": "393",
+                "value": "PAOK"
+            },
+            {
+                "id": "1884",
+                "value": "Panathinaikos FC"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "value": "Holland Eredivisie (1)",
+        "childs": [
+            {
+                "id": "1906",
+                "value": "AZ Alkmaar"
+            },
+            {
+                "id": "245",
+                "value": "Ajax"
+            },
+            {
+                "id": "1915",
+                "value": "FC Groningen"
+            },
+            {
+                "id": "1908",
+                "value": "FC Twente"
+            },
+            {
+                "id": "1903",
+                "value": "FC Utrecht"
+            },
+            {
+                "id": "246",
+                "value": "Feyenoord"
+            },
+            {
+                "id": "634",
+                "value": "Fortuna Sittard"
+            },
+            {
+                "id": "100632",
+                "value": "Go Ahead Eagles"
+            },
+            {
+                "id": "100634",
+                "value": "Heracles Almelo"
+            },
+            {
+                "id": "1910",
+                "value": "N.E.C. Nijmegen"
+            },
+            {
+                "id": "1914",
+                "value": "PEC Zwolle"
+            },
+            {
+                "id": "247",
+                "value": "PSV"
+            },
+            {
+                "id": "1905",
+                "value": "RKC Waalwijk"
+            },
+            {
+                "id": "647",
+                "value": "SC Cambuur"
+            },
+            {
+                "id": "1913",
+                "value": "SC Heerenveen"
+            },
+            {
+                "id": "100646",
+                "value": "Sparta Rotterdam"
+            },
+            {
+                "id": "1909",
+                "value": "Vitesse"
+            },
+            {
+                "id": "1907",
+                "value": "Willem II"
+            }
+        ]
+    },
+    {
+        "id": 64,
+        "value": "Hungarian Nemzeti Bajnokság I (1)",
+        "childs": [
+            {
+                "id": "1874",
+                "value": "Ferencvárosi TC"
+            }
+        ]
+    },
+    {
+        "id": 2149,
+        "value": "Indian Super League (1)",
+        "childs": [
+            {
+                "id": "113146",
+                "value": "ATK Mohun Bagan FC"
+            },
+            {
+                "id": "113302",
+                "value": "Bengaluru FC"
+            },
+            {
+                "id": "113297",
+                "value": "Chennaiyin FC"
+            },
+            {
+                "id": "113298",
+                "value": "FC Goa"
+            },
+            {
+                "id": "113301",
+                "value": "Hyderabad FC"
+            },
+            {
+                "id": "114168",
+                "value": "Jamshedpur FC"
+            },
+            {
+                "id": "113299",
+                "value": "Kerala Blasters FC"
+            },
+            {
+                "id": "113300",
+                "value": "Mumbai City FC"
+            },
+            {
+                "id": "113040",
+                "value": "NorthEast United FC"
+            },
+            {
+                "id": "113257",
+                "value": "Odisha FC"
+            },
+            {
+                "id": "111629",
+                "value": "SC East Bengal FC"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "value": "Italian Serie B (2)",
+        "childs": [
+            {
+                "id": "111811",
+                "value": "AC Monza"
+            },
+            {
+                "id": "112026",
+                "value": "Benevento"
+            },
+            {
+                "id": "110734",
+                "value": "Crotone"
+            },
+            {
+                "id": "347",
+                "value": "Lecce"
+            },
+            {
+                "id": "50",
+                "value": "Parma"
+            }
+        ]
+    },
+    {
+        "id": 349,
+        "value": "Japanese J. League Division 1 (1)",
+        "childs": [
+            {
+                "id": "113186",
+                "value": "Avispa Fukuoka"
+            },
+            {
+                "id": "101148",
+                "value": "Cerezo Osaka"
+            },
+            {
+                "id": "101150",
+                "value": "FC Tokyo"
+            },
+            {
+                "id": "112093",
+                "value": "Gamba Osaka"
+            },
+            {
+                "id": "112444",
+                "value": "Hokkaido Consadole Sapporo"
+            },
+            {
+                "id": "101147",
+                "value": "Kashima Antlers"
+            },
+            {
+                "id": "101145",
+                "value": "Kashiwa Reysol"
+            },
+            {
+                "id": "111730",
+                "value": "Kawasaki Frontale"
+            },
+            {
+                "id": "112092",
+                "value": "Nagoya Grampus"
+            },
+            {
+                "id": "113183",
+                "value": "Oita Trinita"
+            },
+            {
+                "id": "113160",
+                "value": "Sagan Tosu"
+            },
+            {
+                "id": "113157",
+                "value": "Sanfrecce Hiroshima"
+            },
+            {
+                "id": "101149",
+                "value": "Shimizu S-Pulse"
+            },
+            {
+                "id": "113161",
+                "value": "Shonan Bellmare"
+            },
+            {
+                "id": "112783",
+                "value": "Tokushima Vortis"
+            },
+            {
+                "id": "111575",
+                "value": "Urawa Red Diamonds"
+            },
+            {
+                "id": "112836",
+                "value": "Vegalta Sendai"
+            },
+            {
+                "id": "101146",
+                "value": "Vissel Kobe"
+            },
+            {
+                "id": "101151",
+                "value": "Yokohama F. Marinos"
+            },
+            {
+                "id": "113197",
+                "value": "Yokohama FC"
+            }
+        ]
+    },
+    {
+        "id": 83,
+        "value": "Korean K League 1 (1)",
+        "childs": [
+            {
+                "id": "2056",
+                "value": "Daegu FC"
+            },
+            {
+                "id": "982",
+                "value": "FC Seoul"
+            },
+            {
+                "id": "112115",
+                "value": "Gangwon FC"
+            },
+            {
+                "id": "112258",
+                "value": "GwangJu FC"
+            },
+            {
+                "id": "110765",
+                "value": "Incheon United FC"
+            },
+            {
+                "id": "1478",
+                "value": "Jeju United FC"
+            },
+            {
+                "id": "1477",
+                "value": "Jeonbuk Hyundai Motors"
+            },
+            {
+                "id": "1474",
+                "value": "Pohang Steelers"
+            },
+            {
+                "id": "981",
+                "value": "Seongnam FC"
+            },
+            {
+                "id": "112558",
+                "value": "Suwon FC"
+            },
+            {
+                "id": "983",
+                "value": "Suwon Samsung Bluewings"
+            },
+            {
+                "id": "1473",
+                "value": "Ulsan Hyundai FC"
+            }
+        ]
+    },
+    {
+        "id": 2017,
+        "value": "Liga de Fútbol Profesional Boliviano (1)",
+        "childs": [
+            {
+                "id": "114577",
+                "value": "Club Always Ready"
+            },
+            {
+                "id": "112667",
+                "value": "Club Atlético Nacional Potosí"
+            },
+            {
+                "id": "115358",
+                "value": "Club Atlético Palmaflor"
+            },
+            {
+                "id": "110968",
+                "value": "Club Bolívar"
+            },
+            {
+                "id": "114600",
+                "value": "Club Deportivo Guabirá"
+            },
+            {
+                "id": "110974",
+                "value": "Club Deportivo Jorge Wilstermann"
+            },
+            {
+                "id": "110969",
+                "value": "Club The Strongest"
+            }
+        ]
+    },
+    {
+        "id": 341,
+        "value": "Mexican Liga MX (1)",
+        "childs": [
+            {
+                "id": "1032",
+                "value": "CF Monterrey "
+            },
+            {
+                "id": "1879",
+                "value": "Club América"
+            },
+            {
+                "id": "101114",
+                "value": "Club Atlas"
+            },
+            {
+                "id": "112678",
+                "value": "Club Atlético de San Luis"
+            },
+            {
+                "id": "1880",
+                "value": "Club Deportivo Guadalajara"
+            },
+            {
+                "id": "110781",
+                "value": "Club León"
+            },
+            {
+                "id": "101121",
+                "value": "Club Necaxa"
+            },
+            {
+                "id": "111678",
+                "value": "Club Tijuana"
+            },
+            {
+                "id": "1881",
+                "value": "Club Universidad Nacional"
+            },
+            {
+                "id": "1878",
+                "value": "Cruz Azul"
+            },
+            {
+                "id": "1882",
+                "value": "Deportivo Toluca"
+            },
+            {
+                "id": "113134",
+                "value": "Fútbol Club Juárez"
+            },
+            {
+                "id": "110150",
+                "value": "Gallos Blancos de Querétaro"
+            },
+            {
+                "id": "114899",
+                "value": "Mazatlán Futbol Club"
+            },
+            {
+                "id": "110147",
+                "value": "Pachuca"
+            },
+            {
+                "id": "110152",
+                "value": "Puebla FC"
+            },
+            {
+                "id": "110144",
+                "value": "Santos Laguna"
+            },
+            {
+                "id": "1970",
+                "value": "Tigres U.A.N.L."
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "value": "Norwegian Eliteserien (1)",
+        "childs": [
+            {
+                "id": "918",
+                "value": "FK Bodø\/Glimt"
+            },
+            {
+                "id": "1463",
+                "value": "FK Haugesund"
+            },
+            {
+                "id": "113459",
+                "value": "Kristiansund BK"
+            },
+            {
+                "id": "299",
+                "value": "Lillestrøm SK"
+            },
+            {
+                "id": "112420",
+                "value": "Mjøndalen IF"
+            },
+            {
+                "id": "417",
+                "value": "Molde FK"
+            },
+            {
+                "id": "1456",
+                "value": "Odds BK"
+            },
+            {
+                "id": "298",
+                "value": "Rosenborg BK"
+            },
+            {
+                "id": "919",
+                "value": "SK Brann"
+            },
+            {
+                "id": "1757",
+                "value": "Sandefjord Fotball"
+            },
+            {
+                "id": "112199",
+                "value": "Sarpsborg 08 FF"
+            },
+            {
+                "id": "917",
+                "value": "Stabæk Fotball"
+            },
+            {
+                "id": "922",
+                "value": "Strømsgodset IF"
+            },
+            {
+                "id": "418",
+                "value": "Tromsø IL"
+            },
+            {
+                "id": "300",
+                "value": "Viking FK"
+            },
+            {
+                "id": "920",
+                "value": "Vålerenga Fotball"
+            }
+        ]
+    },
+    {
+        "id": 337,
+        "value": "Paraguayan Primera División (1)",
+        "childs": [
+            {
+                "id": "111007",
+                "value": "12 de Octubre FC"
+            },
+            {
+                "id": "112716",
+                "value": "Club Cerro Porteño"
+            },
+            {
+                "id": "111008",
+                "value": "Club Libertad"
+            },
+            {
+                "id": "112671",
+                "value": "Club Nacional"
+            },
+            {
+                "id": "101108",
+                "value": "Club Olimpia"
+            },
+            {
+                "id": "114575",
+                "value": "Club River Plate Asunción"
+            },
+            {
+                "id": "114688",
+                "value": "Guaireña FC"
+            }
+        ]
+    },
+    {
+        "id": 2020,
+        "value": "Peruvian Primera División (1)",
+        "childs": [
+            {
+                "id": "114619",
+                "value": "Carlos A. Mannucci"
+            },
+            {
+                "id": "111013",
+                "value": "Club Sporting Cristal"
+            },
+            {
+                "id": "111014",
+                "value": "Club Universitario de Deportes"
+            },
+            {
+                "id": "111334",
+                "value": "FBC Melgar"
+            },
+            {
+                "id": "114511",
+                "value": "Sport Huancayo"
+            },
+            {
+                "id": "114617",
+                "value": "Universidad Técnica de Cajamarca"
+            }
+        ]
+    },
+    {
+        "id": 66,
+        "value": "Polish T-Mobile Ekstraklasa (1)",
+        "childs": [
+            {
+                "id": "112510",
+                "value": "Bruk-Bet Termalica Nieciecza"
+            },
+            {
+                "id": "110747",
+                "value": "Cracovia"
+            },
+            {
+                "id": "420",
+                "value": "Górnik Zabrze"
+            },
+            {
+                "id": "110565",
+                "value": "Górnik \u0141\u0119czna"
+            },
+            {
+                "id": "110745",
+                "value": "Jagiellonia Bia\u0142ystok"
+            },
+            {
+                "id": "873",
+                "value": "Lech Pozna\u0144"
+            },
+            {
+                "id": "111091",
+                "value": "Lechia Gda\u0144sk"
+            },
+            {
+                "id": "1871",
+                "value": "Legia Warszawa"
+            },
+            {
+                "id": "114004",
+                "value": "PGE FKS Stal Mielec"
+            },
+            {
+                "id": "111086",
+                "value": "Piast Gliwice"
+            },
+            {
+                "id": "110746",
+                "value": "Pogo\u0144 Szczecin"
+            },
+            {
+                "id": "111088",
+                "value": "Radomiak Radom"
+            },
+            {
+                "id": "114326",
+                "value": "Raków Cz\u0119stochowa"
+            },
+            {
+                "id": "112511",
+                "value": "Warta Pozna\u0144"
+            },
+            {
+                "id": "1873",
+                "value": "Wis\u0142a Kraków"
+            },
+            {
+                "id": "1569",
+                "value": "Wis\u0142a P\u0142ock"
+            },
+            {
+                "id": "110749",
+                "value": "Zag\u0142\u0119bie Lubin"
+            },
+            {
+                "id": "111092",
+                "value": "\u015al\u0105sk Wroc\u0142aw"
+            }
+        ]
+    },
+    {
+        "id": 308,
+        "value": "Portuguese Liga ZON SAGRES (1)",
+        "childs": [
+            {
+                "id": "1889",
+                "value": "Belenenses SAD"
+            },
+            {
+                "id": "1898",
+                "value": "Boavista FC"
+            },
+            {
+                "id": "112516",
+                "value": "CD Tondela"
+            },
+            {
+                "id": "1893",
+                "value": "Clube Sport Marítimo"
+            },
+            {
+                "id": "10020",
+                "value": "Estoril Praia"
+            },
+            {
+                "id": "112513",
+                "value": "FC Arouca"
+            },
+            {
+                "id": "1892",
+                "value": "FC Paços de Ferreira"
+            },
+            {
+                "id": "236",
+                "value": "FC Porto"
+            },
+            {
+                "id": "111539",
+                "value": "FC Vizela"
+            },
+            {
+                "id": "112809",
+                "value": "Futebol Clube de Famalicão"
+            },
+            {
+                "id": "1888",
+                "value": "Gil Vicente FC"
+            },
+            {
+                "id": "1900",
+                "value": "Moreirense FC"
+            },
+            {
+                "id": "10031",
+                "value": "Portimonense SC"
+            },
+            {
+                "id": "1896",
+                "value": "SC Braga"
+            },
+            {
+                "id": "234",
+                "value": "SL Benfica"
+            },
+            {
+                "id": "1438",
+                "value": "Santa Clara"
+            },
+            {
+                "id": "237",
+                "value": "Sporting CP"
+            },
+            {
+                "id": "1887",
+                "value": "Vitória de Guimarães"
+            }
+        ]
+    },
+    {
+        "id": 65,
+        "value": "Rep. Ireland Airtricity League (1)",
+        "childs": [
+            {
+                "id": "305",
+                "value": "Bohemian FC"
+            },
+            {
+                "id": "445",
+                "value": "Derry City"
+            },
+            {
+                "id": "1572",
+                "value": "Drogheda United"
+            },
+            {
+                "id": "837",
+                "value": "Dundalk FC"
+            },
+            {
+                "id": "111131",
+                "value": "Finn Harps"
+            },
+            {
+                "id": "1586",
+                "value": "Longford Town"
+            },
+            {
+                "id": "306",
+                "value": "Shamrock Rovers"
+            },
+            {
+                "id": "563",
+                "value": "Sligo Rovers"
+            },
+            {
+                "id": "423",
+                "value": "St. Patrick's Athletic"
+            },
+            {
+                "id": "753",
+                "value": "Waterford FC"
+            }
+        ]
+    },
+    {
+        "id": 330,
+        "value": "Romanian Liga I (1)",
+        "childs": [
+            {
+                "id": "113387",
+                "value": "AFC Chindia Târgovi\u0219te"
+            },
+            {
+                "id": "110750",
+                "value": "AFC UTA Arad"
+            },
+            {
+                "id": "110816",
+                "value": "CFR Cluj"
+            },
+            {
+                "id": "113380",
+                "value": "CS Mioveni"
+            },
+            {
+                "id": "100759",
+                "value": "Campionii FC Arges"
+            },
+            {
+                "id": "113391",
+                "value": "FC Academica Clinceni"
+            },
+            {
+                "id": "110752",
+                "value": "FC Boto\u015fani"
+            },
+            {
+                "id": "100757",
+                "value": "FC Dinamo 1948 Bucure\u015fti"
+            },
+            {
+                "id": "110075",
+                "value": "FC Farul Constan\u021ba"
+            },
+            {
+                "id": "115716",
+                "value": "FC U Craiova 1948"
+            },
+            {
+                "id": "113182",
+                "value": "FC Voluntari"
+            },
+            {
+                "id": "100761",
+                "value": "FCSB (Steaua)"
+            },
+            {
+                "id": "112637",
+                "value": "Gaz Metan Media\u015f"
+            },
+            {
+                "id": "310",
+                "value": "Rapid Bucure\u0219ti"
+            },
+            {
+                "id": "113378",
+                "value": "Sepsi OSK Sf. Gheorghe"
+            },
+            {
+                "id": "308",
+                "value": "Universitatea Craiova"
+            }
+        ]
+    },
+    {
+        "id": 67,
+        "value": "Russian Premier League (1)",
+        "childs": [
+            {
+                "id": "100765",
+                "value": "FC Lokomotiv Moscow"
+            },
+            {
+                "id": "315",
+                "value": "PFC CSKA Moscow"
+            },
+            {
+                "id": "100767",
+                "value": "Spartak Moskva"
+            }
+        ]
+    },
+    {
+        "id": 350,
+        "value": "Saudi Abdul L. Jameel League (1)",
+        "childs": [
+            {
+                "id": "113058",
+                "value": "Abha Club"
+            },
+            {
+                "id": "112387",
+                "value": "Al Ahli"
+            },
+            {
+                "id": "112990",
+                "value": "Al Batin"
+            },
+            {
+                "id": "112389",
+                "value": "Al Faisaly"
+            },
+            {
+                "id": "112390",
+                "value": "Al Fateh"
+            },
+            {
+                "id": "113057",
+                "value": "Al Fayha"
+            },
+            {
+                "id": "113222",
+                "value": "Al Hazem"
+            },
+            {
+                "id": "605",
+                "value": "Al Hilal"
+            },
+            {
+                "id": "607",
+                "value": "Al Ittihad"
+            },
+            {
+                "id": "112139",
+                "value": "Al Nassr"
+            },
+            {
+                "id": "112392",
+                "value": "Al Raed"
+            },
+            {
+                "id": "111674",
+                "value": "Al Shabab"
+            },
+            {
+                "id": "112393",
+                "value": "Al Taawoun"
+            },
+            {
+                "id": "112572",
+                "value": "Al Tai"
+            },
+            {
+                "id": "113217",
+                "value": "Damac FC"
+            },
+            {
+                "id": "112096",
+                "value": "Ettifaq FC"
+            }
+        ]
+    },
+    {
+        "id": 50,
+        "value": "Scottish Premiership (1)",
+        "childs": [
+            {
+                "id": "77",
+                "value": "Aberdeen"
+            },
+            {
+                "id": "78",
+                "value": "Celtic"
+            },
+            {
+                "id": "180",
+                "value": "Dundee FC"
+            },
+            {
+                "id": "181",
+                "value": "Dundee United"
+            },
+            {
+                "id": "80",
+                "value": "Heart of Midlothian"
+            },
+            {
+                "id": "81",
+                "value": "Hibernian"
+            },
+            {
+                "id": "621",
+                "value": "Livingston FC"
+            },
+            {
+                "id": "83",
+                "value": "Motherwell"
+            },
+            {
+                "id": "86",
+                "value": "Rangers FC"
+            },
+            {
+                "id": "631",
+                "value": "Ross County FC"
+            },
+            {
+                "id": "100804",
+                "value": "St. Johnstone FC"
+            },
+            {
+                "id": "100805",
+                "value": "St. Mirren"
+            }
+        ]
+    },
+    {
+        "id": 347,
+        "value": "South African Premier Division (1)",
+        "childs": [
+            {
+                "id": "110929",
+                "value": "Kaizer Chiefs"
+            },
+            {
+                "id": "110930",
+                "value": "Orlando Pirates"
+            }
+        ]
+    },
+    {
+        "id": 54,
+        "value": "Spanish Segunda División (2)",
+        "childs": [
+            {
+                "id": "100831",
+                "value": "AD Alcorcón"
+            },
+            {
+                "id": "10846",
+                "value": "Burgos CF"
+            },
+            {
+                "id": "100888",
+                "value": "CD Leganés"
+            },
+            {
+                "id": "110831",
+                "value": "CD Lugo"
+            },
+            {
+                "id": "110069",
+                "value": "CD Mirandés"
+            },
+            {
+                "id": "260",
+                "value": "CD Tenerife"
+            },
+            {
+                "id": "110065",
+                "value": "CF Fuenlabrada"
+            },
+            {
+                "id": "100851",
+                "value": "FC Cartagena"
+            },
+            {
+                "id": "110062",
+                "value": "Girona FC"
+            },
+            {
+                "id": "573",
+                "value": "Málaga CF"
+            },
+            {
+                "id": "110827",
+                "value": "Real Oviedo"
+            },
+            {
+                "id": "110711",
+                "value": "Real Sociedad B"
+            },
+            {
+                "id": "459",
+                "value": "Real Sporting de Gijón"
+            },
+            {
+                "id": "462",
+                "value": "Real Valladolid CF"
+            },
+            {
+                "id": "244",
+                "value": "Real Zaragoza"
+            },
+            {
+                "id": "113356",
+                "value": "SD Amorebieta"
+            },
+            {
+                "id": "467",
+                "value": "SD Eibar"
+            },
+            {
+                "id": "110839",
+                "value": "SD Huesca"
+            },
+            {
+                "id": "2023",
+                "value": "SD Ponferradina"
+            },
+            {
+                "id": "113981",
+                "value": "UD Ibiza"
+            },
+            {
+                "id": "1861",
+                "value": "Unión Deportiva Almería"
+            },
+            {
+                "id": "472",
+                "value": "Unión Deportiva Las Palmas"
+            }
+        ]
+    },
+    {
+        "id": 56,
+        "value": "Swedish Allsvenskan (1)",
+        "childs": [
+            {
+                "id": "433",
+                "value": "AIK"
+            },
+            {
+                "id": "711",
+                "value": "BK Häcken"
+            },
+            {
+                "id": "113892",
+                "value": "Degerfors IF"
+            },
+            {
+                "id": "710",
+                "value": "Djurgårdens IF"
+            },
+            {
+                "id": "321",
+                "value": "Halmstads BK"
+            },
+            {
+                "id": "708",
+                "value": "Hammarby IF"
+            },
+            {
+                "id": "700",
+                "value": "IF Elfsborg"
+            },
+            {
+                "id": "319",
+                "value": "IFK Göteborg"
+            },
+            {
+                "id": "702",
+                "value": "IFK Norrköping"
+            },
+            {
+                "id": "113458",
+                "value": "IK Sirius"
+            },
+            {
+                "id": "1439",
+                "value": "Kalmar FF"
+            },
+            {
+                "id": "320",
+                "value": "Malmö FF"
+            },
+            {
+                "id": "112072",
+                "value": "Mjällby AIF"
+            },
+            {
+                "id": "113743",
+                "value": "Varbergs BoIS FC"
+            },
+            {
+                "id": "705",
+                "value": "Örebro SK"
+            },
+            {
+                "id": "113173",
+                "value": "Östersunds FK"
+            }
+        ]
+    },
+    {
+        "id": 189,
+        "value": "Swiss Super League (1)",
+        "childs": [
+            {
+                "id": "900",
+                "value": "BSC Young Boys"
+            },
+            {
+                "id": "896",
+                "value": "FC Basel 1893"
+            },
+            {
+                "id": "1862",
+                "value": "FC Lausanne-Sport"
+            },
+            {
+                "id": "10032",
+                "value": "FC Lugano"
+            },
+            {
+                "id": "897",
+                "value": "FC Luzern"
+            },
+            {
+                "id": "110770",
+                "value": "FC Sion"
+            },
+            {
+                "id": "898",
+                "value": "FC St. Gallen 1879"
+            },
+            {
+                "id": "894",
+                "value": "FC Zürich"
+            },
+            {
+                "id": "322",
+                "value": "Grasshopper Club Zürich"
+            },
+            {
+                "id": "324",
+                "value": "Servette FC"
+            }
+        ]
+    },
+    {
+        "id": 68,
+        "value": "Turkish Süper Lig (1)",
+        "childs": [
+            {
+                "id": "101016",
+                "value": "Adana Demirspor"
+            },
+            {
+                "id": "101006",
+                "value": "Altay SK"
+            },
+            {
+                "id": "741",
+                "value": "Antalyaspor"
+            },
+            {
+                "id": "101028",
+                "value": "Ataka\u015f Hatayspor"
+            },
+            {
+                "id": "113142",
+                "value": "Aytemiz Alanyaspor"
+            },
+            {
+                "id": "327",
+                "value": "Be\u015fikta\u015f JK"
+            },
+            {
+                "id": "101041",
+                "value": "Demir Grup Sivasspor"
+            },
+            {
+                "id": "111117",
+                "value": "Fatih Karagümrük S.K."
+            },
+            {
+                "id": "326",
+                "value": "Fenerbahçe SK"
+            },
+            {
+                "id": "112120",
+                "value": "GZT Giresunspor"
+            },
+            {
+                "id": "325",
+                "value": "Galatasaray SK"
+            },
+            {
+                "id": "110776",
+                "value": "Gazi\u015fehir Gaziantep F.K."
+            },
+            {
+                "id": "101026",
+                "value": "Göztepe SK"
+            },
+            {
+                "id": "111339",
+                "value": "Kasimpa\u015fa SK"
+            },
+            {
+                "id": "436",
+                "value": "Trabzonspor"
+            },
+            {
+                "id": "113259",
+                "value": "Yeni Malatyaspor"
+            },
+            {
+                "id": "101020",
+                "value": "Yukatel Kayserispor"
+            },
+            {
+                "id": "101037",
+                "value": "Çaykur Rizespor"
+            },
+            {
+                "id": "101014",
+                "value": "\u0130stanbul Ba\u015fak\u015fehir FK"
+            },
+            {
+                "id": "101033",
+                "value": "\u0130ttifak Holding Konyaspor"
+            }
+        ]
+    },
+    {
+        "id": 2013,
+        "value": "UAE Arabian Gulf League (1)",
+        "childs": [
+            {
+                "id": "111701",
+                "value": "Al Ain FC"
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "value": "USA Major League Soccer (1)",
+        "childs": [
+            {
+                "id": "112885",
+                "value": "Atlanta United"
+            },
+            {
+                "id": "114161",
+                "value": "Austin FC"
+            },
+            {
+                "id": "693",
+                "value": "Chicago Fire Football Club"
+            },
+            {
+                "id": "111139",
+                "value": "Club de Foot Montréal"
+            },
+            {
+                "id": "694",
+                "value": "Colorado Rapids"
+            },
+            {
+                "id": "687",
+                "value": "Columbus Crew"
+            },
+            {
+                "id": "688",
+                "value": "D.C. United"
+            },
+            {
+                "id": "113149",
+                "value": "FC Cincinnati"
+            },
+            {
+                "id": "695",
+                "value": "FC Dallas"
+            },
+            {
+                "id": "698",
+                "value": "Houston Dynamo"
+            },
+            {
+                "id": "112893",
+                "value": "Inter Miami CF"
+            },
+            {
+                "id": "697",
+                "value": "LA Galaxy"
+            },
+            {
+                "id": "112996",
+                "value": "Los Angeles FC"
+            },
+            {
+                "id": "111138",
+                "value": "Minnesota United FC"
+            },
+            {
+                "id": "114162",
+                "value": "Nashville SC"
+            },
+            {
+                "id": "691",
+                "value": "New England Revolution"
+            },
+            {
+                "id": "112828",
+                "value": "New York City FC"
+            },
+            {
+                "id": "689",
+                "value": "New York Red Bulls"
+            },
+            {
+                "id": "112606",
+                "value": "Orlando City Soccer Club"
+            },
+            {
+                "id": "112134",
+                "value": "Philadelphia Union"
+            },
+            {
+                "id": "111140",
+                "value": "Portland Timbers"
+            },
+            {
+                "id": "111065",
+                "value": "Real Salt Lake"
+            },
+            {
+                "id": "111928",
+                "value": "San Jose Earthquakes"
+            },
+            {
+                "id": "111144",
+                "value": "Seattle Sounders FC"
+            },
+            {
+                "id": "696",
+                "value": "Sporting Kansas City"
+            },
+            {
+                "id": "111651",
+                "value": "Toronto FC"
+            },
+            {
+                "id": "101112",
+                "value": "Vancouver Whitecaps FC"
+            }
+        ]
+    },
+    {
+        "id": 332,
+        "value": "Ukrainian Premier League (1)",
+        "childs": [
+            {
+                "id": "101047",
+                "value": "Dynamo Kyiv"
+            },
+            {
+                "id": "101059",
+                "value": "Shakhtar Donetsk"
+            }
+        ]
+    },
+    {
+        "id": 338,
+        "value": "Uruguayan Primera División (1)",
+        "childs": [
+            {
+                "id": "111002",
+                "value": "Centro Atlético Fénix"
+            },
+            {
+                "id": "115536",
+                "value": "Cerro Largo Fútbol Club"
+            },
+            {
+                "id": "101110",
+                "value": "Club Atlético Peñarol"
+            },
+            {
+                "id": "115535",
+                "value": "Club Atlético Rentistas"
+            },
+            {
+                "id": "111325",
+                "value": "Club Nacional de Football"
+            },
+            {
+                "id": "113143",
+                "value": "Montevideo City Torque"
+            }
+        ]
+    },
+    {
+        "id": 2019,
+        "value": "Venezuelan Primera División (1)",
+        "childs": [
+            {
+                "id": "110992",
+                "value": "AC Mineros de Guayana"
+            },
+            {
+                "id": "114611",
+                "value": "Academia Puerto Cabello"
+            },
+            {
+                "id": "112916",
+                "value": "Aragua Fútbol Club"
+            },
+            {
+                "id": "112853",
+                "value": "Deportivo La Guaira FC"
+            },
+            {
+                "id": "110990",
+                "value": "Deportivo Táchira FC"
+            },
+            {
+                "id": "112914",
+                "value": "Metropolitanos de Caracas FC"
+            }
+        ]
+    }
+]

@@ -9,6 +9,7 @@ import "./App.css";
 import * as MCR from "./api/converter"
 import CreateMCR from "./api/coreMCR";
 import leaguesJSON from "./leagues.json";
+import teamsJSON from "./teams.json";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -45,8 +46,18 @@ function App() {
     .then((data) => {
       console.log(data)
       setTeamsData(data);
-      setTeams(data.map((t) => t.name_team));
+      setTeams(data.map((t) => {
+         const team_id = handleTeamId(leagueSel, t.name_team);
+          return { name: t.name_team, id: team_id }
+        }
+      ));
     })
+  }
+
+  const handleTeamId = (league, name) => {
+    const league_id = teamsJSON.filter(l => l.id === league)[0];
+    const team = league_id.childs.filter(t => t.value === name)[0];
+    return team?.id;
   }
 
   const handleView = (index) => {
