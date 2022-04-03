@@ -189,8 +189,6 @@ function PlayerNameNumber(props) {
     props.onChange(e.target.value, stat);
   }
   return(
-    <>
-    {props?.id && <img src={`https://cdn.sofifa.net/players/${handleIdPlayer(props?.id)}/22_180.png`} alt={props.name}/>}
     <div className="pnn">
       <div style={{width: "200px", position: "relative", marginRight: "1em"}}>
         <input maxLength="10" onChange={e=>handleChange(e,"name")} className="pnn__input" type="text" placeholder="Placeholder Text" value={props.name}/>
@@ -201,7 +199,6 @@ function PlayerNameNumber(props) {
         <span className="focus-border"></span>
       </div>
     </div>
-    </>
   )
 }
 
