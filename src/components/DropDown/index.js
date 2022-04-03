@@ -40,7 +40,8 @@ function DropDown({ list, selected, placeholder, style }) {
   };
 
   const handleSelectTeam = (item, index) => {
-    setItemSelected(item);
+    if(!item.name) setItemSelected(item);
+    if(item.name) setItemSelected(item.name);
     selected(index);
     setIsOpen(false);
   };
@@ -60,7 +61,7 @@ function DropDown({ list, selected, placeholder, style }) {
           {trail.map(({ x, height, ...rest }, index) => (
             <a.li
               key={index}
-              onClick={() => handleSelectTeam(list[index].name, index)}
+              onClick={() => handleSelectTeam(list[index], index)}
               style={{
                 ...rest,
                 transform: x.interpolate((x) => `translate3d(0,${x}px,0)`),
