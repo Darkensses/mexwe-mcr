@@ -166,7 +166,7 @@ function App() {
       </div>
       <Modal
         isOpen={openModal}
-        title={indexMCR !== -1 ? <PlayerNameNumber onChange={handleSliderEditor} id={mcrPlayers[indexMCR]?.id_player} name={mcrPlayers[indexMCR].name} number={mcrPlayers[indexMCR].shirtNumber}/> : null}
+        title={indexMCR !== -1 ? <PlayerNameNumber onChange={handleSliderEditor} id={mcrPlayers[indexMCR]?.id_player} name={mcrPlayers[indexMCR]?.name} number={mcrPlayers[indexMCR]?.shirtNumber}/> : null}
         closeModal={() => setOpenModal(false)}
       >
         {indexMCR !== -1 ? (
