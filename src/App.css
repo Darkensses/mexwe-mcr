@@ -22,28 +22,36 @@
   padding: 2em 0;
 }
 
-.App__panel__player, .App__panel__mcr {
+.App__panel__player,
+.App__panel__mcr {
   flex: 1;
   display: flex;
-  flex-direction: column;  
-  align-items: center;  
+  flex-direction: column;
+  align-items: center;
   height: 70vh;
-  overflow-y: scroll; 
-  margin: 0 2em; 
+  overflow-y: scroll;
+  margin: 0 2em;
 }
 
-.App__panel__player::-webkit-scrollbar-track, .App__panel__mcr::-webkit-scrollbar-track {	
-	border-radius: 10px;	
+.App__panel__player::-webkit-scrollbar-track,
+.App__panel__mcr::-webkit-scrollbar-track {
+  border-radius: 10px;
 }
 
-.App__panel__player::-webkit-scrollbar, .App__panel__mcr::-webkit-scrollbar {
-	width: 6px;
-	background-color: #F5F5F5;
+.App__panel__player::-webkit-scrollbar,
+.App__panel__mcr::-webkit-scrollbar {
+  width: 6px;
+  background-color: #f5f5f5;
 }
 
-.App__panel__player::-webkit-scrollbar-thumb, .App__panel__mcr::-webkit-scrollbar-thumb{
-	border-radius: 10px;	
-	background-color: #bbb;
+.App__panel__player::-webkit-scrollbar-thumb,
+.App__panel__mcr::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #bbb;
+}
+
+.App__logo__team {
+  position: absolute;
 }
 
 button {
@@ -54,14 +62,14 @@ button {
   justify-content: center;
   position: relative;
   height: 2.5em;
-  padding: .5em .75em;
-  border-radius: .25em;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
   box-sizing: border-box;
   background: #52a0fd;
-  box-shadow: 0 0.15em 1em rgba(0,0,0,.2);
-  transition: all .3s ease-out;
+  box-shadow: 0 0.15em 1em rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
   cursor: pointer;
-  font-family: 'K2D', sans-serif;
+  font-family: "K2D", sans-serif;
 }
 
 button:hover {
@@ -69,19 +77,19 @@ button:hover {
 }
 
 .pnn {
-  width: 100%;  
+  width: 100%;
   display: flex;
   flex-direction: row;
   position: relative;
 }
 
 .pnn__input {
-  font-family: 'K2D', sans-serif;
+  font-family: "K2D", sans-serif;
   font-size: 24px;
   font-weight: bold;
   width: 100%;
-  border: 0; 
-  padding: 7px 0; 
+  border: 0;
+  padding: 7px 0;
   border-bottom: 1px solid #ccc;
 }
 
@@ -90,17 +98,17 @@ button:hover {
 }
 
 .pnn__input ~ .focus-border {
-  position: absolute; 
-  bottom: 0; 
-  left: 50%; 
-  width: 0; 
-  height: 2px; 
-  background-color: #52a0fd; 
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #52a0fd;
   transition: 0.4s;
 }
 
 .pnn__input:focus ~ .focus-border {
-  width: 100%; 
-  transition: 0.4s; 
+  width: 100%;
+  transition: 0.4s;
   left: 0;
 }

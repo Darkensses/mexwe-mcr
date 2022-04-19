@@ -131,27 +131,43 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div>
-        <div className="App__dropdowns">
-          <DropDown
-            placeholder="Pick a League..."
-            list={leagues}
-            selected={handleLeagueSelect}
-          />
-        </div>
-        <div className="App__dropdowns">
-          <DropDown
-            placeholder="Pick a team..."
-            list={teams}
-            selected={handleSelect}
-          />
-        </div>
-        {teamId && (
+      {teamId && (
+        <div className="App__logo__team">
           <img
             src={`https://cdn.sofifa.net/teams/${teamId}/120.png`}
             alt={teamId}
           />
-        )}
+          <img
+            src={`https://cdn.sofifa.net/kits//${teamId}/22_0.png`}
+            alt={teamId}
+          />
+          <img
+            src={`https://cdn.sofifa.net/kits//${teamId}/22_1.png`}
+            alt={teamId}
+          />
+          <img
+            src={`https://cdn.sofifa.net/kits//${teamId}/22_2.png`}
+            alt={teamId}
+          />
+          <img
+            src={`https://cdn.sofifa.net/kits//${teamId}/22_3.png`}
+            alt={teamId}
+          />
+        </div>
+      )}
+      <div className="App__dropdowns">
+        <DropDown
+          placeholder="Pick a League..."
+          list={leagues}
+          selected={handleLeagueSelect}
+        />
+      </div>
+      <div className="App__dropdowns">
+        <DropDown
+          placeholder="Pick a team..."
+          list={teams}
+          selected={handleSelect}
+        />
       </div>
       <div className="App__panel">
         <div className="App__panel__player">
