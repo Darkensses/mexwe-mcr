@@ -139,19 +139,19 @@ function App() {
           />
           <img
             src={`https://cdn.sofifa.net/kits//${teamId}/22_0.png`}
-            alt={teamId}
+            alt="kit_1"
           />
           <img
             src={`https://cdn.sofifa.net/kits//${teamId}/22_1.png`}
-            alt={teamId}
+            alt="kit_2"
           />
           <img
             src={`https://cdn.sofifa.net/kits//${teamId}/22_2.png`}
-            alt={teamId}
+            alt="kit_3"
           />
           <img
             src={`https://cdn.sofifa.net/kits//${teamId}/22_3.png`}
-            alt={teamId}
+            alt="kit_4"
           />
         </div>
       )}
