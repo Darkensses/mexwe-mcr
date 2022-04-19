@@ -40,11 +40,12 @@ function DropDown({ list, selected, placeholder, style }) {
   };
 
   const handleSelectTeam = (item, index) => {
-    setItemSelected(item);
+    if(!item.name) setItemSelected(item);
+    if(item.name) setItemSelected(item.name);
     selected(index);
     setIsOpen(false);
   };
-  
+
   return (
     <div className="dropdown__wrapper" style={style}>
       <div className="dropdown__main" onClick={handleDropDownClick}>
@@ -59,14 +60,15 @@ function DropDown({ list, selected, placeholder, style }) {
         <ul>
           {trail.map(({ x, height, ...rest }, index) => (
             <a.li
-              key={list[index].split(" ") + index}
+              key={index}
               onClick={() => handleSelectTeam(list[index], index)}
               style={{
                 ...rest,
                 transform: x.interpolate((x) => `translate3d(0,${x}px,0)`),
               }}
             >
-              {list[index]}
+              {list[index].id ? <img src={`https://cdn.sofifa.net/teams/${list[index].id}/30.png`} alt={list[index]?.id} /> : ""}&nbsp;
+              {list[index].name ? list[index].name : list[index]}
             </a.li>
           ))}
         </ul>

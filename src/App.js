@@ -5,14 +5,14 @@ import Modal from "./components/Modal";
 import Editor from "./components/Editor";
 import "./App.css";
 
-
-import * as MCR from "./api/converter"
+import * as MCR from "./api/converter";
 import CreateMCR from "./api/coreMCR";
 import leaguesJSON from "./leagues.json";
+import teamsJSON from "./teams.json";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const API_URL = "https://sheltered-depths-57882.herokuapp.com"
+const API_URL = "https://sheltered-depths-57882.herokuapp.com";
 let leagues = leaguesJSON.map((l) => l.name_league);
 
 function App() {
@@ -20,9 +20,11 @@ function App() {
   let [teams, setTeams] = useState([]);
   let [team, setTeam] = useState([]);
   let [teamName, setTeamName] = useState("");
+  let [teamId, setTeamId] = useState();
+  let [leagueId, setLeagueId] = useState();
   let [mcrPlayers, setMCRPlayers] = useState([]);
-  let [openModal, setOpenModal] = useState(false)
-  let [ indexMCR, setIndexMCR ] = useState(-1);
+  let [openModal, setOpenModal] = useState(false);
+  let [indexMCR, setIndexMCR] = useState(-1);
 
   useEffect(() => {
     console.log(mcrPlayers);
@@ -30,46 +32,59 @@ function App() {
 
   const handleSelect = (index) => {
     let teamSel = teamsData[index].players;
-    setTeamName(teamsData[index].name_team)
-    console.log(teamSel)
-    setTeam(teamSel)    
-  }
+    setTeamName(teamsData[index].name_team);
+    setTeamId(handleTeamId(leagueId, teamsData[index].name_team));
+    setTeam(teamSel);
+  };
 
   const handleLeagueSelect = (index) => {
-    let leagueSel = leaguesJSON[index].id_league;    
+    let leagueSel = leaguesJSON[index].id_league;
+    setLeagueId(leagueSel);
     setTeams([]);
-    setTeamName('');
+    setTeamName("");
     setTeam([]);
     fetch(`${API_URL}/leagues/${leagueSel}`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data)
-      setTeamsData(data);
-      setTeams(data.map((t) => t.name_team));
-    })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setTeamsData(data);
+        setTeams(
+          data.map((t) => {
+            const team_id = handleTeamId(leagueSel, t.name_team);
+            return { name: t.name_team, id: team_id };
+          })
+        );
+      });
+  };
+
+  const handleTeamId = (league, name) => {
+    const league_id = teamsJSON.filter((l) => l.id === league)[0];
+    const team = league_id.childs.filter((t) => t.value === name)[0];
+    return team?.id;
+  };
 
   const handleView = (index) => {
-    console.log(team[index])
-  }
+    console.log(team[index]);
+  };
 
   const handleMCR = (index) => {
-    console.log(mcrPlayers[index])
-    setOpenModal(true)
-    setIndexMCR(index)
-  }
+    console.log(mcrPlayers[index]);
+    setOpenModal(true);
+    setIndexMCR(index);
+  };
 
   const handleAddPlayer = (player) => {
-    if(mcrPlayers.length < 23) {
-      let mcrPlayer = MCR.toWE2002([player])
+    if (mcrPlayers.length < 23) {
+      let mcrPlayer = MCR.toWE2002([player]);
       mcrPlayer[0].shirtNumber = mcrPlayers.length + 1;
-      setMCRPlayers(old => [...old, mcrPlayer[0]]);
+      mcrPlayer[0].id_player = player.id_player;
+      setMCRPlayers((old) => [...old, mcrPlayer[0]]);
     }
-  }
+  };
 
   const handleRemovePlayer = (player) => {
-    if(mcrPlayers.length === 0) {
-      console.log("MCRS PLAYERS EMPTY")
+    if (mcrPlayers.length === 0) {
+      console.log("MCRS PLAYERS EMPTY");
       return;
     }
 
@@ -77,26 +92,30 @@ function App() {
   };
 
   const selectAll = () => {
-    let players = team.length < 23 ? team.slice(mcrPlayers.length,team.length) : team.slice(mcrPlayers.length,23);
+    let players =
+      team.length < 23
+        ? team.slice(mcrPlayers.length, team.length)
+        : team.slice(mcrPlayers.length, 23);
     let index = mcrPlayers.length;
-    for(let i=0; i<players.length; i++){
+    for (let i = 0; i < players.length; i++) {
       let mcrPlayer = MCR.toWE2002([players[i]]);
       mcrPlayer[0].shirtNumber = index += 1;
+      mcrPlayer[0].id_player = players[i].id_player;
       setMCRPlayers((old) => [...old, mcrPlayer[0]]);
     }
-  }
+  };
 
   const handleSliderEditor = (value, stat) => {
     console.log(stat, value);
-    let mcrAux = [...mcrPlayers]
-    let paux ={...mcrPlayers[indexMCR]};
+    let mcrAux = [...mcrPlayers];
+    let paux = { ...mcrPlayers[indexMCR] };
     paux[stat] = value;
-    mcrAux[indexMCR] = paux;    
+    mcrAux[indexMCR] = paux;
     setMCRPlayers(mcrAux);
-  }
+  };
 
   const handleDownloadMCR = async () => {
-    if(mcrPlayers.length === 0) return;
+    if (mcrPlayers.length === 0) return;
 
     let mcr = await CreateMCR(mcrPlayers);
 
@@ -106,24 +125,59 @@ function App() {
     link.setAttribute("download", `mcr.mcr`);
     document.body.appendChild(link);
     link.click();
-    link.parentNode.removeChild(link);    
-  }
+    link.parentNode.removeChild(link);
+  };
 
   return (
     <div className="App">
       <Header />
+      {teamId && (
+        <div className="App__logo__team">
+          <img
+            src={`https://cdn.sofifa.net/teams/${teamId}/120.png`}
+            alt={teamId}
+          />
+          <img
+            src={`https://cdn.sofifa.net/kits//${teamId}/22_0.png`}
+            alt="kit_1"
+          />
+          <img
+            src={`https://cdn.sofifa.net/kits//${teamId}/22_1.png`}
+            alt="kit_2"
+          />
+          <img
+            src={`https://cdn.sofifa.net/kits//${teamId}/22_2.png`}
+            alt="kit_3"
+          />
+          <img
+            src={`https://cdn.sofifa.net/kits//${teamId}/22_3.png`}
+            alt="kit_4"
+          />
+        </div>
+      )}
       <div className="App__dropdowns">
-        <DropDown placeholder="Pick a League..." list={leagues} selected={handleLeagueSelect} />
+        <DropDown
+          placeholder="Pick a League..."
+          list={leagues}
+          selected={handleLeagueSelect}
+        />
       </div>
-      <div className="App__dropdowns">        
-        <DropDown placeholder="Pick a team..." list={teams} selected={handleSelect} />
+      <div className="App__dropdowns">
+        <DropDown
+          placeholder="Pick a team..."
+          list={teams}
+          selected={handleSelect}
+        />
       </div>
       <div className="App__panel">
         <div className="App__panel__player">
           <h2>{teamName ? teamName : "Team"}</h2>
-          <button onClick={selectAll}>Select {23 - mcrPlayers.length} player(s)</button>
+          <button onClick={selectAll}>
+            Select {23 - mcrPlayers.length} player(s)
+          </button>
           {team.map((player, index) => (
             <PlayerBox
+              id={player.id_player}
               key={player.id_player}
               name={player.name}
               number={player.jerseyNumber}
@@ -137,6 +191,7 @@ function App() {
           <button onClick={handleDownloadMCR}>Download MCR</button>
           {mcrPlayers.map((player, index) => (
             <PlayerBox
+              id={player.id_player}
               key={player.name + index}
               name={player.name}
               number={player.shirtNumber}
@@ -151,7 +206,16 @@ function App() {
       </div>
       <Modal
         isOpen={openModal}
-        title={indexMCR !== -1 ? <PlayerNameNumber onChange={handleSliderEditor} name={mcrPlayers[indexMCR].name} number={mcrPlayers[indexMCR].shirtNumber}/> : null}
+        title={
+          indexMCR !== -1 ? (
+            <PlayerNameNumber
+              onChange={handleSliderEditor}
+              id={mcrPlayers[indexMCR]?.id_player}
+              name={mcrPlayers[indexMCR]?.name}
+              number={mcrPlayers[indexMCR]?.shirtNumber}
+            />
+          ) : null
+        }
         closeModal={() => setOpenModal(false)}
       >
         {indexMCR !== -1 ? (
@@ -166,19 +230,33 @@ function App() {
 function PlayerNameNumber(props) {
   const handleChange = (e, stat) => {
     props.onChange(e.target.value, stat);
-  }
-  return(
+  };
+  return (
     <div className="pnn">
-      <div style={{width: "200px", position: "relative", marginRight: "1em"}}>
-        <input maxLength="10" onChange={e=>handleChange(e,"name")} className="pnn__input" type="text" placeholder="Placeholder Text" value={props.name}/>
+      <div style={{ width: "200px", position: "relative", marginRight: "1em" }}>
+        <input
+          maxLength="10"
+          onChange={(e) => handleChange(e, "name")}
+          className="pnn__input"
+          type="text"
+          placeholder="Placeholder Text"
+          value={props.name}
+        />
         <span className="focus-border"></span>
       </div>
-      <div style={{width: "80px", position: "relative"}}>
-        <input maxLength="2" onChange={e=>handleChange(e,"shirtNumber")} className="pnn__input" type="text" placeholder="Placeholder Text" value={props.number}/>
+      <div style={{ width: "80px", position: "relative" }}>
+        <input
+          maxLength="2"
+          onChange={(e) => handleChange(e, "shirtNumber")}
+          className="pnn__input"
+          type="text"
+          placeholder="Placeholder Text"
+          value={props.number}
+        />
         <span className="focus-border"></span>
       </div>
     </div>
-  )
+  );
 }
 
 export default App;

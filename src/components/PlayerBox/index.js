@@ -3,6 +3,7 @@ import { FaEye, FaPlaystation, FaPlusCircle, FaTrashAlt } from "react-icons/fa";
 import "./styles.css"
 //import { Checkbox } from "pretty-checkbox-react";
 import "pretty-checkbox"
+import { splitIdPlayer } from "../../api/splitIdPlayer";
 
 
 function PlayerBox(props) {
@@ -17,6 +18,7 @@ function PlayerBox(props) {
 
     return (
       <div className="PlayerBox">
+        {props?.id ? <img src={`https://cdn.sofifa.net/players/${splitIdPlayer(props.id)}/22_60.png`} alt="avatar"/> : ""}
         <div className="PlayerBox__name">{props.name}</div>
         <div className="PlayerBox__num">{props.number}</div>
         <div className="PlayerBox__pos">{props.position}</div>
